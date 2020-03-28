@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+	background-color: #ffffff;
 }
 
 *,
@@ -8,8 +9,27 @@ html {
 	box-sizing: inherit;
 }
 
+* {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	outline: none !important;
+	text-decoration: none;
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		outline: none !important;
+	}
+}
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	background-color: #ffffff;
+	margin-top: 124px; 
+	@include media('<desktop'){
+		margin-top: 304px;
+	} 
 }
 
 hr {

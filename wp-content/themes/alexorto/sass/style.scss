@@ -47,8 +47,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*--------------------------------------------------------------
 # Normalize
+# Include media
 --------------------------------------------------------------*/
 @import "normalize";
+@import "include-media";
 
 /*--------------------------------------------------------------
 # Typography
