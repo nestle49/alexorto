@@ -26,9 +26,9 @@ a {
 }
 body {
 	background-color: #ffffff;
-	margin-top: 124px; 
+	margin-top: 174px; 
 	@include media('<desktop'){
-		margin-top: 304px;
+		margin-top: 354px;
 	} 
 }
 

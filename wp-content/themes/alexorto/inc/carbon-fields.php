@@ -24,12 +24,8 @@ function crb_attach_theme_options() {
             Field::make( 'complex', 'crb_slides', 'Слайдер' )
                 ->set_layout( 'tabbed-horizontal' )
                 ->add_fields( array(
-                    Field::make( 'text', 'crb_slide_title', 'Заголовок слайда' )->set_width( 33 ),
-                    Field::make( 'textarea', 'crb_slide_text', 'Текс слайда' )->set_width( 33 ),
-                    Field::make( 'text', 'crb_slide_link', 'Текст ссылки' )->set_width( 33 ),
-                    Field::make( 'text', 'crb_slide_url', 'Адрес ссылки' )->set_width( 33 ),
-                    Field::make( 'checkbox', 'crb_slide_right', 'Отображать текст справа')->set_option_value('no'),
-                    Field::make( 'image', 'crb_slide_image', 'Изображение слайда' )->set_width( 33 )->set_value_type( 'url' )->set_required( true ),
+                    Field::make( 'image', 'slide_image', 'Изображение слайда' )->set_width( 100 )->set_value_type( 'url' )->set_required( true ),
+                    Field::make( 'text', 'slide_link', 'Ссылка слайда' )->set_width( 100 )->set_required( true ),
                 ) ),
         ) );
 

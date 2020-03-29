@@ -1,0 +1,18 @@
+<!-- Slider main container -->
+{% if slides %}
+    <section class="home-slider">
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                {% for slide in slides %} 
+                    <a href="{{ slide.slide_link }}" class="swiper-slide" style="background-image:url('{{ slide.slide_image }}')"></a>
+                {% endfor %} 
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            </div>
+        </div>
+    </section>
+{% endif %}

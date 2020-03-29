@@ -122,9 +122,17 @@ add_action( 'widgets_init', 'alexorto_widgets_init' );
 function alexorto_scripts() {
 	wp_enqueue_style( 'alexorto-style', get_stylesheet_uri() );
 
+	wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/assets/swiper/swiper.min.css', array(), null );
+	
+	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/swiper/swiper.min.js', array( 'jquery' ), null, true );
+
 	wp_enqueue_script( 'alexorto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'alexorto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	if ( is_home() ) {
+		wp_enqueue_script( 'home-swipers-js', get_template_directory_uri() . '/js/home-swipers.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/home-swipers.js' ) , true );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -160,6 +168,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Include Carbon Service
+ */
+require_once dirname(__FILE__) . '/service/CarbonService.php';
+
+/**
  *  Carbon Fields
  */
 require get_template_directory() . '/inc/carbon-fields.php';
+

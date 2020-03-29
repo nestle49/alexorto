@@ -1,0 +1,17 @@
+.home-slider {
+    min-height: 545px;
+    & .swiper-slide {
+        min-height: 545px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    & .swiper-pagination-bullets {
+        // bottom: 20px !important;
+    }
+    & .swiper-pagination-bullet {
+        width: 20px !important;
+        height: 20px !important;
+        margin: 0 6px !important;
+        border: 5px solid #fff !important;
+    }
+}
