@@ -17,7 +17,13 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<?php Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); ?>
+		<?php 
+			Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); 
+			// Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); 
+			Timber::render('./template-parts/home-services.twig', CarbonService::getHomeServices()); 
+			// Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); 
+		
+		?>
 
 	
 		</main><!-- #main -->

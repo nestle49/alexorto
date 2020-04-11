@@ -1,3 +1,6 @@
+
+// Home Slider -->
+
 .home-slider {
     & .swiper-slide {
         background-repeat: no-repeat;
@@ -50,3 +53,111 @@
         opacity: 1 !important;
     }
 }
+
+// <-- Home Slider
+
+// Home Services -->
+
+.home-services {
+    padding: 40px 15px;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        @include media('<tablet'){
+            flex-direction: row;
+            flex-wrap: wrap;
+        } 
+    }
+    &__item {
+        display: flex;
+        padding: 10px;
+        padding: .625rem;
+        margin-bottom: 20px;
+        margin-bottom: 1.25rem;
+        border-radius: 6px;
+        border-radius: .4rem;
+        @include media('<tablet'){
+            margin: 10px;
+            margin: .625rem;
+            flex-direction: column;
+            align-items: center;
+            flex-basis: 0;
+            flex-grow: 1;
+        } 
+        &--green {
+            background-color: #e7faf2;
+        }
+        &--yellow {
+            background-color: #f5f2dd;
+        }
+        &--pink {
+            background-color: #f8ebef;
+        }
+        &--purple {
+            background-color: #efebf9;
+        }
+        &:hover {
+            .home-services {
+                &__image-container {
+                    & img {
+                        transition: transform 3s linear;
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+    &__image-container {
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        min-width: 260px;
+        min-height: 210px;
+        padding: 20px;
+        overflow: hidden;
+        height: auto;
+        background-color: #ffffff;
+        margin-right: 30px;
+        margin-right: 1.875rem;
+        border-radius: 6px;
+        border-radius: .4rem;
+        @include media('<tablet'){
+            margin-right: unset;
+            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
+            width: 100%;
+        } 
+        & img {
+            transition: transform 3s linear;
+        }
+    }
+    &__content {
+        padding: 0 20px 0 0;
+        padding: 0 1.25rem 0 0;
+        @include media('<tablet'){
+            padding: 0 10px 10px 10px;
+            padding: 0 .625rem .625rem .625rem;
+        } 
+    }
+    &__description {
+        text-align: justify;
+        font-size: 15px;
+        font-size: .9375rem;
+        color: #444;
+    }
+    &__title {
+        margin-bottom: 15px;
+        margin-bottom: .9375rem;
+        font-size: 20px;
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 35px;
+        line-height: 2.1875rem;
+        color: #202020;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+// <-- Home Services

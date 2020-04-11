@@ -1,0 +1,24 @@
+<!-- Home services -->
+{% if services %}
+    <section class="home-services container">
+        <h2 class="section-header"> {{ header_services }}</h2>
+        <div class="home-services__wrapper">
+            {% set i = 0 %}
+            {% for service in services %} 
+                <div class="home-services__item {% if (i == 0) %} {{ "home-services__item--green" }} 
+                {% elseif (i == 1) %} {{ "home-services__item--yellow" }} 
+                {% elseif (i == 2) %} {{ "home-services__item--pink" }} 
+                {% elseif (i == 3) %} {{ "home-services__item--purple" }} 
+                {% endif %} {% set i = i + 1 %} {% if i == 4 %} {% set i = 0 %} {% endif %}">
+                    <div class="home-services__image-container">
+                        <img src="{{ service.service_image }}" width="auto" height="auto">
+                    </div>
+                    <div class="home-services__content">
+                        <span class="home-services__title"> {{ service.service_header }} </span>
+                        <div class="home-services__description"> {{ service.service_text }} </div>
+                    </div>
+                </div>
+            {% endfor %} 
+        </div>
+    </section>
+{% endif %}
