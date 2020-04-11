@@ -1,17 +1,52 @@
 .home-slider {
-    min-height: 545px;
     & .swiper-slide {
-        min-height: 545px;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        justify-content: center;
+        &__img {
+            margin: 0 auto;
+        }
     }
-    & .swiper-pagination-bullets {
-        // bottom: 20px !important;
-    }
+
     & .swiper-pagination-bullet {
-        width: 20px !important;
-        height: 20px !important;
-        margin: 0 6px !important;
-        border: 5px solid #fff !important;
+        max-width: 190px;
+        max-width: 11.875rem;
+        width: 100%;
+        margin-left: 2px !important;
+        margin-left: .125rem !important;
+        margin-right: 2px !important;
+        margin-right: .125rem !important;
+        padding: 10px 0 !important;
+        padding: .625rem 0 !important;
+        opacity: .5;
+        background-color: #fff;
+        transition: opacity 250ms ease;
+        height: 8px !important;
+        height: .5rem !important;
+        width: 100%;
+        outline: none;
+        border-radius: 0;
+        &:first-child {
+            border-radius: 4px 0 0 4px;
+            border-radius: .25rem 0 0 .25rem;
+        }
+        &:last-child {
+            border-radius: 0 4px 4px 0;
+            border-radius: 0 .25rem .25rem 0;
+        }
+        @include media('<desktop'){
+            width: auto;
+            padding: 8px !important;
+            padding: .5rem !important;
+            margin: 8px !important;
+            margin: .5rem !important;
+            border-radius: 100% !important;
+        } 
+    }
+    .swiper-pagination-bullet-active {
+        opacity: 1 !important;
     }
 }

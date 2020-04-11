@@ -6,7 +6,13 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 {% for slide in slides %} 
-                    <a href="{{ slide.slide_link }}" class="swiper-slide" style="background-image:url('{{ slide.slide_image }}')"></a>
+                    <a href="{{ slide.slide_link }}" class="swiper-slide">
+                         <picture>
+                            <source srcset="{{ slide.slide_image_mobile }}" media="(min-device-width:320px) and (max-device-width:480px)">
+                            <source srcset="{{ slide.slide_image_tablet }}" media="(min-device-width:481px) and (max-device-width:768px)">
+                            <img src="{{ slide.slide_image }}" class="swiper-slide__img">
+                        </picture>
+                    </a>
                 {% endfor %} 
             </div>
             <!-- If we need pagination -->

@@ -4,10 +4,11 @@
         /* home page swipers --> */ 
 
         var mySwiper = new Swiper(".swiper-container", {
-            // effect: "slide",
-            effect: 'fade',
+            effect: "slide",
+            // effect: 'fade',
             speed: 2000,
             loop: true,
+            autoHeight: true,
             autoplay: {
             delay: 3000
             },

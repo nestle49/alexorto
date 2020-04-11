@@ -25,6 +25,8 @@ function crb_attach_theme_options() {
                 ->set_layout( 'tabbed-horizontal' )
                 ->add_fields( array(
                     Field::make( 'image', 'slide_image', 'Изображение слайда' )->set_width( 100 )->set_value_type( 'url' )->set_required( true ),
+                    Field::make( 'image', 'slide_image_tablet', 'Изображение слайда для планшета' )->set_width( 100 )->set_value_type( 'url' )->set_required( true ),
+                    Field::make( 'image', 'slide_image_mobile', 'Изображение слайда для мобильного' )->set_width( 100 )->set_value_type( 'url' )->set_required( true ),
                     Field::make( 'text', 'slide_link', 'Ссылка слайда' )->set_width( 100 )->set_required( true ),
                 ) ),
         ) );
