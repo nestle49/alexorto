@@ -12,6 +12,7 @@ html {
 * {
 	padding: 0;
 	margin: 0;
+	font-family: "Basis Grotesque Pro", sans-serif;
 }
 
 a {
@@ -26,9 +27,9 @@ a {
 }
 body {
 	background-color: #ffffff;
-	margin-top: 174px; 
+	margin-top: 120px; 
 	@include media('<desktop'){
-		margin-top: 354px;
+		// margin-top: 354px;
 	} 
 }
 

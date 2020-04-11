@@ -20,10 +20,11 @@
     padding: 20px 20px 0 20px;
     z-index: 9;
     background-color: #ffffff;
+    max-height: 120px; // fix
+    overflow: hidden; //fix
     &__wrapper {
         display: flex;
         flex-direction: column;
-        background-color: #edeef4;
         padding: 10px;
         & .container {
             display: flex;
