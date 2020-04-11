@@ -69,10 +69,12 @@
 /* header-services --> */
 
 .header-services {
-    padding: 20px 0;
+    margin: 25px auto;
+    margin: 1.55rem auto;
     background: transparent;
     display: flex;
-    flex-wrap: wrap;
+    flex: 0 1 auto;
+    flex-flow: row wrap;
     justify-content: space-around;
     &__img {
         width: 54px;
@@ -86,7 +88,61 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 20px 10px;
+        text-align: center;
+        flex-basis: 33%;
+        max-width: 33%;
+        padding: 10px;
+        padding: .625rem;
+        position: relative;
+        transition: .15s;
+        &:hover {
+            color: #5cbf96;
+            transition: .15s;
+            cursor: default;
+        }
+        &::after {
+            content:"";
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            right: 0;
+            width: .0625rem;
+            background-color: #eaeaea;
+        }
+        &:last-of-type {
+            &::after {
+                content:none;
+            }
+        }
+        @include media('<desktop'){
+            flex-basis: 50%;
+            max-width: 50%;
+            &:nth-of-type(2) {
+                &::after {
+                    width: 100%;
+                    right: unset;
+                    bottom: 0;
+                    height: 1px;
+                    height: .0625rem;
+                    left: -50%;
+                }
+            }
+        } 
+        @include media('<600px'){
+            flex-basis: 50%;
+            max-width: 50%;
+            min-width: 280px;
+            margin: 20px 10px;
+            &::after,
+            &:nth-of-type(2)::after {
+                width: 100%;
+                right: unset;
+                left: unset;
+                bottom: -21px;
+                height: 1px;
+                height: .0625rem;
+            }
+        } 
     }
 }
 
