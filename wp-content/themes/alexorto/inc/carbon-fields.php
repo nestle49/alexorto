@@ -8,9 +8,7 @@ function crb_attach_theme_options() {
     Container::make( 'theme_options', __( 'Главная страница', 'crb' ) )
         ->add_tab( 'Шапка', array(
             Field::make( 'text', 'header_phone', 'Номер телефона в шапке' )->set_width( 50 ),
-            Field::make( 'text', 'header_address', 'Адрес в шапке' )->set_width( 50 ),
-            Field::make( 'text', 'header_text', 'Текст заголовка в шапке' )->set_width( 50 ),
-            Field::make( 'text', 'subheader_text', 'Текст подзаголовка в шапке' )->set_width( 50 ),
+            Field::make( 'text', 'header_address', 'Адрес' )->set_width( 50 ),
         ) )
         ->add_tab( 'Услуги (шапка)', array(
             Field::make( 'text', 'header_service_1_text', 'Блок услуги 1, текст' )->set_width( 33 )->set_required( true ),

@@ -31,7 +31,6 @@
         /* <-- home page swipers */ 
 
     });
-
   })( jQuery );
 
 
