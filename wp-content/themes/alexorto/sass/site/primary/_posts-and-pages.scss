@@ -22,6 +22,25 @@
 	margin: 0 0 1.5em;
 }
 
+.site-main {
+		& a {
+		color: #5cbf96;
+    	border-bottom: 1px solid transparent;
+		border-bottom: .0625rem solid transparent;
+		transition: color .15s linear, border-color .15s linear;
+		&:hover,
+		&:active,
+		&:focus,
+		&:visited {
+			color: #5cbf96;
+		}
+		&:hover {
+			border-color: #b6e2d0;
+			transition: color .15s linear, border-color .15s linear;
+		}
+	}
+}
+
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -52,3 +71,4 @@
     	width: 100%;
 	}
 }
+

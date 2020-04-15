@@ -1,0 +1,133 @@
+.wpcf7-form {
+    & label {
+        font-size: 17px;
+        font-size: 1.0625rem;
+        line-height: 25px;
+        line-height: 1.5625rem;
+        color: #7f7f7f;
+    }
+    & input,
+    & textarea,
+    & select {
+        height: 50px;
+        height: 3.125rem;
+        width: 100%;
+        max-width: 600px;
+        padding-left: 16px;
+        padding-left: 1rem;
+        padding-right: 16px;
+        padding-right: 1rem;
+        font-size: 17px;
+        font-size: 1.0625rem;
+        line-height: 25px;
+        line-height: 1.5625rem;
+        font-weight: 400;
+        border: none;
+        border-radius: 2px;
+        border-radius: .125rem;
+        background: 0 0;
+        border: 1px solid #dfdfdf;
+        border: .0625rem solid #dfdfdf;
+        resize: none;
+        outline: 0;
+        color: inherit;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        will-change: border;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-transition: border .3s ease;
+        transition: border .3s ease;
+        border-radius: 6px;
+        outline: none;
+    }
+    & textarea {
+        height: unset;
+    }
+    & input[type="file"] {
+        outline:0;
+        opacity:0;
+        pointer-events:none;
+        user-select:none;
+        display: none;
+    }
+    & input[type="submit"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        padding-left: 16px;
+        padding-left: 1rem;
+        padding-right: 16px;
+        padding-right: 1rem;
+        color: #fff;
+        border-color: #5cbf96;
+        background-color: #5cbf96;
+        &.btn {
+            &--auto {
+                width: auto;
+                @include media('<tablet'){
+                    width: 100%;
+                }
+            }
+        }
+        &:hover {
+            border-color: #47b889;
+            background-color: #47b889;
+            cursor: pointer;
+        }
+    }
+}
+
+.btn {
+    &--auto {
+        width: auto !important;
+        @include media('<tablet'){
+            width: 100% !important;
+        }
+    }
+}
+
+.file {
+    &__label {
+        width: 150px;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px dashed grey;
+        border-radius: 5px;
+        display: block;
+        padding: 1.2em;
+        transition: border 300ms ease;
+        cursor: pointer;
+        text-align: center;
+        & br {
+            display: none;
+        }
+        & i {
+            display: block;
+            font-size: 42px;
+            padding-bottom: 16px;
+            color:grey;
+            transition: 200ms color;
+        }
+        & .title {
+            color: grey;
+            transition: 200ms color;
+        }
+        &:hover {
+            border: 2px solid #000000;
+            & i,
+            & .title {
+                color:#000000;
+            }
+        }
+        @include media('<tablet'){
+            width: 100%;
+            max-width: 600px;
+        }
+    }
+}

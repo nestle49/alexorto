@@ -41,6 +41,19 @@
 
         /* <-- scroll header */
 
+        /* input file customization --> */
+
+        $('input[type="file"]').change(function(){
+            var value = $("input[type='file']").val();
+            value = value.toString();
+            value = value.split("\\");
+            if ($('.uploaded-file')) { 
+                $('.uploaded-file').text(value[value.length - 1]); 
+            }
+        });
+
+        /* <-- input file customization */
+
 
 
 
