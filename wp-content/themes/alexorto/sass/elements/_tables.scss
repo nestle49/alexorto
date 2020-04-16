@@ -2,3 +2,179 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
+
+.table-overflow-wrapper {
+	max-width: 100%;
+    overflow: auto;
+}
+
+.contacts-table {
+	& a {
+		width: 48px;
+		height: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 5px;
+	}
+	& td {
+		&:first-of-type {
+			width: 200px;
+		} 
+	}
+}
+
+.table-shoes-payment {
+	& thead {
+		& td {
+			color: #ffffff;
+    		background-color: #5cbf96;
+		}
+	}
+	& tbody {
+		& tr {
+			&:nth-of-type(even) {
+				background-color: #f9f9f9;
+			}
+		}
+	} 
+	& td {
+		padding: 10px;
+	}
+}
+
+.table-rental-fees {
+	& thead {
+		& th {
+			color: #ffffff;
+			background-color: #5cbf96;
+			padding: 10px;
+		}
+	}
+	& tbody {
+		& tr {
+			& td {
+				&:first-of-type {
+					color: #ffffff;
+    				background-color: #5cbf96;
+				}
+			}
+		}
+	} 
+	& td {
+		padding: 10px;
+	}
+}
+
+.table-delivery {
+	& thead {
+		& th {
+			color: #ffffff;
+			background-color: #5cbf96;
+			padding: 10px;
+		}
+	}
+	& tbody {
+		& tr {
+			&:nth-of-type(odd) {
+				background-color: #f9f9f9;
+			}
+		}
+	} 
+	& td {
+		padding: 10px;
+	}
+}
+
+.table-size {
+	& thead {
+		& th {
+			color: #ffffff;
+			background-color: #5cbf96;
+			padding: 10px;
+		}
+	}
+	& tbody {
+		& tr {
+			& td {
+				&:first-of-type {
+					border: none;
+					background-color: #f5f2dd;
+				}
+			}
+		}
+	} 
+	& td {
+		padding: 10px;
+		border: 1px solid #f9f9f9;
+	}
+}
+
+.fullness-table {
+	& tbody {
+		& tr {
+			
+			&:first-of-type {
+				& td {
+					&:nth-of-type(2) {
+						background-color: #f5f2dd;
+						border: none;
+					}
+				}
+			}
+			&:nth-of-type(2) {
+				& td {
+					color: #ffffff;
+					background-color: #5cbf96;
+					border: none;
+				}
+			}
+			&:nth-of-type(3) {
+				& td {
+					&:nth-of-type(6) {
+						background-color: #f5f2dd;
+						border: none;
+					}
+				}
+			}
+			&:last-of-type {
+				& td {
+					&:nth-of-type(5) {
+						background-color: #f5f2dd;
+						border: none;
+					}
+				}
+			}
+		}
+	} 
+	& td {
+		padding: 10px;
+		border: 1px solid #f9f9f9;
+	}
+}
+
+.table-rise {
+	& thead {
+		& th {
+			color: #ffffff;
+			background-color: #5cbf96;
+			border: none;
+			padding: 10px;
+		}
+	}
+	& tbody {
+		& tr {
+			& td {
+				&:nth-of-type(6) {
+					background-color: #f5f2dd;
+					border: none;
+				}
+			}
+		}
+	
+	} 
+	& td {
+		padding: 10px;
+		border: 1px solid #f9f9f9;
+	}
+}
