@@ -1,33 +1,37 @@
 <?php
+/**
+ * Plugin Name: Breadcrumbs
+ */
+
 /*
- * WordPress Breadcrumbs
- * author: Dimox
- * version: 2019.03.03
- * license: MIT
+ * "Breadcrumbs" для WordPress
+ * автор: Dimox
+ * версия: 2019.03.03
+ * лицензия: MIT
 */
 function dimox_breadcrumbs() {
 
-	/* === OPTIONS === */
-	$text['home']     = 'Home'; // text for the 'Home' link
-	$text['category'] = 'Archive by Category "%s"'; // text for a category page
-	$text['search']   = 'Search Results for "%s" Query'; // text for a search results page
-	$text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
-	$text['author']   = 'Articles Posted by %s'; // text for an author page
-	$text['404']      = 'Error 404'; // text for the 404 page
-	$text['page']     = 'Page %s'; // text 'Page N'
-	$text['cpage']    = 'Comment Page %s'; // text 'Comment Page N'
+	/* === ОПЦИИ === */
+	$text['home']     = '<i class="material-icons">home</i>'; // текст ссылки "Главная"
+	$text['category'] = '%s'; // текст для страницы рубрики
+	$text['search']   = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
+	$text['tag']      = 'Записи с тегом "%s"'; // текст для страницы тега
+	$text['author']   = 'Статьи автора %s'; // текст для страницы автора
+	$text['404']      = 'Ошибка 404'; // текст для страницы 404
+	$text['page']     = 'Страница %s'; // текст 'Страница N'
+	$text['cpage']    = 'Страница комментариев %s'; // текст 'Страница комментариев N'
 
-	$wrap_before    = '<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // the opening wrapper tag
-	$wrap_after     = '</div><!-- .breadcrumbs -->'; // the closing wrapper tag
-	$sep            = '<span class="breadcrumbs__separator"> › </span>'; // separator between crumbs
-	$before         = '<span class="breadcrumbs__current">'; // tag before the current crumb
-	$after          = '</span>'; // tag after the current crumb
+	$wrap_before    = '<div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">'; // открывающий тег обертки
+	$wrap_after     = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
+	$sep            = '<span class="breadcrumbs__separator"> › </span>'; // разделитель между "крошками"
+	$before         = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"
+	$after          = '</span>'; // тег после текущей "крошки"
 
-	$show_on_home   = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-	$show_home_link = 1; // 1 - show the 'Home' link, 0 - don't show
-	$show_current   = 1; // 1 - show current page title, 0 - don't show
-	$show_last_sep  = 1; // 1 - show last separator, when current page title is not displayed, 0 - don't show
-	/* === END OF OPTIONS === */
+	$show_on_home   = 0; // 1 - показывать "хлебные крошки" на главной странице, 0 - не показывать
+	$show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
+	$show_current   = 1; // 1 - показывать название текущей страницы, 0 - не показывать
+	$show_last_sep  = 1; // 1 - показывать последний разделитель, когда название текущей страницы не отображается, 0 - не показывать
+	/* === КОНЕЦ ОПЦИЙ === */
 
 	global $post;
 	$home_url       = home_url('/');
@@ -216,3 +220,5 @@ function dimox_breadcrumbs() {
 
 	}
 } // end of dimox_breadcrumbs()
+
+?>

@@ -27,6 +27,10 @@
     margin-right: auto;
     max-width: 1160px;
     max-width: 72.5rem;
+    @include media('<desktop'){
+        flex-direction: column;
+        justify-content: center;
+    } 
 }
 
 #bottom-menu {
@@ -73,5 +77,73 @@
     display: flex;
     &__item {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        margin: 0px 10px;
+        margin: 0px .625rem;
+        & svg {
+            color: #c7cbd1;
+            height: auto;
+            transition: color .15s;
+        }
+        &:hover {
+            & svg {
+                transition: color .15s;
+            }
+        }
+        &--fb {
+            & svg {
+                width: 24px;
+            }
+            &:hover {
+                & svg {
+                    color: #3b5998;
+                }
+            }
+        }
+        &--vk {
+            & svg {
+                width: 36px;
+            }
+            &:hover {
+                & svg {
+                    color: #597da3;
+                }
+            }
+        }
+        &--tw {
+            & svg {
+                width: 36px;
+            }
+            &:hover {
+                & svg {
+                    color: #00acee;
+                }
+            }
+        }
+        &--ok {
+            & svg {
+                width: 24px;
+            }
+            &:hover {
+                & svg {
+                    color: #ed812b;
+                }
+            }
+        }
+        &:last-of-type {
+            margin-right: 0;
+            @include media('<desktop'){
+                margin-right: 5px;
+            } 
+        }
     }
+
+    @include media('<desktop'){
+        padding-top: 30px;
+        padding-top: 1.875rem;
+    } 
+
 }

@@ -78,4 +78,13 @@ $data['header_services']['image3'] = carbon_get_theme_option( 'header_service_3_
 
 	<div id="content" class="site-content">
 		<?php Timber::render('./template-parts/header-services.twig', $data['header_services']); ?>
+		<?php if (!is_front_page()): ?>
+			<div class="container breadcrumbs-wrapper">
+        		<?php
+        		    if (function_exists('dimox_breadcrumbs')) {
+						dimox_breadcrumbs();	
+					}
+				?>
+			</div>
+		<?php endif; ?>
 			

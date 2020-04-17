@@ -68,8 +68,8 @@
         border-bottom: .0625rem solid #f0f0f0;
         &__link-to-main {
             display: flex;
-            width: 48px;
-            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
         }
     }
 
@@ -372,3 +372,76 @@ input[type="search"]::-webkit-search-cancel-button {
     background-color: #ffffff;
 }
 
+
+/* breadcrumbs --> */
+
+.breadcrumbs {
+    padding: 10px 0;
+    padding: .625rem 0;
+    &__link {
+        font-size: 15px;
+        font-size: .9375rem;
+        color: #ababab;
+        position: relative;
+        vertical-align: middle;
+        & i {
+            color: #ababab;
+            vertical-align: text-bottom;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px; 
+            height: .0625rem;
+            width: 0;
+            opacity: 0;
+            transition: width 0s ease, opacity .3s ease;
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 1px;
+            height: .0625rem;
+            width: 0;
+            background: #444;
+            opacity: 0;
+            transition: width .3s ease, opacity .3s ease, background .3s ease;
+        }
+        &:visited {
+            color: #ababab;
+        }
+        &:hover {
+            color: #444;
+            &::before {
+                width: 100%;
+                background: #444;
+                opacity: 1;
+                transition: width .3s ease;
+            }
+            &::after {
+                width: 100%;
+                background: 0 0;
+                opacity: 1;
+                transition: all 0s ease;
+            }
+            & i {
+                color: #444;
+            }
+        }
+
+    }
+    &__current {
+        vertical-align: middle;
+    }
+    &__separator {
+        vertical-align: middle;
+    }
+}
+
+/* <-- breadcrumbs */
