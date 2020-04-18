@@ -128,6 +128,23 @@ function crb_attach_theme_options() {
 //     $select_menus = array('menu-0' => 'Не выводить') + $menus;
 //     return $select_menus;
 // }
+add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );
+function crb_attach_post_meta() {
+    Container::make( 'post_meta', __( 'Какое меню выводить слева', 'crb' ) )
+        ->set_context( 'side' )
+        ->set_priority( 'low' )
+        ->where( 'post_type', '=', 'page' )
+        ->add_fields( array(
+            Field::make( 'select', 'crb_select_field', 'Выберите меню' )
+                ->add_options( 'get_list_menu' )
+        ) );
+}
+function get_list_menu() {
+    $menus = get_registered_nav_menus();
+    unset($menus['menu-1'], $menus['menu-2']);
+    $select_menus = array('menu-0' => 'Не выводить') + $menus;
+    return $select_menus;
+}
 
 
 function get_hashtable_items() {

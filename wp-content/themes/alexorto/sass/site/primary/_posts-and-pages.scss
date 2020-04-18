@@ -83,3 +83,14 @@ a.lightgreen {
 	align-items: center;
 	font-weight: bold;
 }
+
+/* page sidebar menu --> */
+
+.site-main {
+	display: flex;
+	@include media('<tablet'){
+        flex-direction: column;
+    } 
+}
+
+/* <-- page sidebar menu */

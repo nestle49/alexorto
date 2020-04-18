@@ -12,8 +12,8 @@
 ?>
 
 	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer">
+		<button id="scroll-top"><i class="material-icons">expand_less</i></button>
 		<div class="site-info">
 			<?php
 				wp_nav_menu( array(

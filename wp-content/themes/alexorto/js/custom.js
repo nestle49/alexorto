@@ -54,6 +54,22 @@
 
         /* <-- input file customization */
 
+        /* scroll to top --> */
+
+        $(window).scroll(function () {
+
+            $(this).scrollTop() > 0 ? $('#scroll-top').fadeIn(1, "linear") : $('#scroll-top').fadeOut("slow", "linear");
+
+        });
+
+        $('#scroll-top').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 400);
+            return false;
+        });
+
+        /* <-- scroll to top */
 
 
 

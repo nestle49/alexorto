@@ -13,10 +13,27 @@
  */
 
 get_header();
-?>
 
+$select_menu = carbon_get_the_post_meta( 'crb_select_field' );
+$menus = get_list_menu();
+if ($select_menu) {
+	$menu = $menus[$select_menu];
+}
+
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container">
+			
+		<?php if ($select_menu && $select_menu !== 'menu-0'):  ?>
+			<?php
+				wp_nav_menu( array(
+					'theme_location'  => $select_menu,
+					'menu'            => $menu,
+					'container'       => 'nav',
+					'container_class' => 'page-menu',
+				) );
+			?>
+		<?php endif; ?>
 
 		<?php
 		while ( have_posts() ) :

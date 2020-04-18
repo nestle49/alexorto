@@ -178,3 +178,33 @@ table {
 		border: 1px solid #f9f9f9;
 	}
 }
+
+.price-sewing-table {
+	& tbody {
+		& tr {
+			& td {
+				padding: 10px;
+				border: 1px solid #f9f9f9;
+			}
+		}
+	
+	} 
+}
+
+.transparent-table {
+	& thead {
+		& th {
+			padding: 10px;
+			border: 1px solid #f9f9f9;
+		}
+	}
+	& tbody {
+		& tr {
+			& td {
+				padding: 10px;
+				border: 1px solid #f9f9f9;
+			}
+		}
+	
+	} 
+}
