@@ -239,7 +239,7 @@
 		}
 
 		& .current-menu-item:not(.current-menu-parent) {
-			& a {
+			& > a {
 				color: #444;
             	&::before {
             		width: 100%;
