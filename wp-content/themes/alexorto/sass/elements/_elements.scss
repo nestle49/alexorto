@@ -29,10 +29,7 @@ a {
 }
 body {
 	background-color: #ffffff;
-	margin-top: 145px; 
-	@include media('<desktop'){
-		// margin-top: 354px;
-	} 
+	margin-top: 120px;
 }
 
 hr {

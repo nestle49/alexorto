@@ -9,12 +9,10 @@
  * @package alexorto
  */
 
-$data['header_services']['text1'] = carbon_get_theme_option( 'header_service_1_text' ); 
-$data['header_services']['text2'] = carbon_get_theme_option( 'header_service_2_text' ); 
-$data['header_services']['text3'] = carbon_get_theme_option( 'header_service_3_text' ); 
-$data['header_services']['image1'] = carbon_get_theme_option( 'header_service_1_image' ); 
-$data['header_services']['image2'] = carbon_get_theme_option( 'header_service_2_image' ); 
-$data['header_services']['image3'] = carbon_get_theme_option( 'header_service_3_image' ); 
+
+$data['top_banner']['desktop'] = carbon_get_the_post_meta( 'top_banner' ); 
+$data['top_banner']['tablet'] = carbon_get_the_post_meta( 'top_banner_tablet' ); 
+$data['top_banner']['mobile'] = carbon_get_the_post_meta( 'top_banner_mobile' ); 
 
 ?>
 <!doctype html>
@@ -60,7 +58,9 @@ $data['header_services']['image3'] = carbon_get_theme_option( 'header_service_3_
 				</a>
 
 				<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle primary-menu-toggle" id="primary-menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button>
+					<button class="menu-toggle primary-menu-toggle" id="primary-menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<span><i class="material-icons">menu</i></span>
+					</button>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
@@ -77,7 +77,9 @@ $data['header_services']['image3'] = carbon_get_theme_option( 'header_service_3_
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-		<?php Timber::render('./template-parts/header-services.twig', $data['header_services']); ?>
+		<?php if (!is_front_page()): ?>
+			<?php Timber::render('./template-parts/top-banner.twig', $data['top_banner']); ?>
+		<?php endif; ?>
 		<?php if (!is_front_page()): ?>
 			<div class="container breadcrumbs-wrapper">
         		<?php

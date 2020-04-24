@@ -1,0 +1,11 @@
+<!-- Top banner -->
+
+{% if desktop %}
+    <section class="top-banner">
+        <picture>
+            <source srcset="{{ mobile }}" media="(min-device-width:320px) and (max-device-width:480px)">
+            <source srcset="{{ tablet }}" media="(min-device-width:481px) and (max-device-width:768px)">
+            <img src="{{ desktop }}" class="top-banner__img">
+        </picture>
+    </section>
+{% endif %}

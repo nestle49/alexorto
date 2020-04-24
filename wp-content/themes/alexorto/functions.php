@@ -188,3 +188,21 @@ require_once dirname(__FILE__) . '/service/CarbonService.php';
  */
 require get_template_directory() . '/inc/carbon-fields.php';
 
+// Adding a custom color to the links
+add_filter( 'nav_menu_link_attributes', 'crb_nav_menu_link_attributes', 10, 4 );
+function crb_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
+	$crb_color = carbon_get_nav_menu_item_meta( $item->ID, 'crb_color' );
+	$crb_bold = carbon_get_nav_menu_item_meta( $item->ID, 'crb_bold' );
+	$styles = '';
+	
+	if(!empty( $crb_color )) {
+		$styles = $styles . 'color: ' . $crb_color . '; ';
+	}
+	if(!empty( $crb_bold )) {
+		$styles = $styles . 'font-weight:600; ';
+	}
+
+    $atts['style'] = $styles;
+
+    return $atts;
+}

@@ -85,6 +85,8 @@
 	}
 }
 
+
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
@@ -266,3 +268,17 @@
 }
 
 /* <--sidebar page menu */
+
+
+/* primary top menu --> */
+
+#primary-menu {
+	@include media('>=desktop'){
+		display: flex;
+		justify-content: center; 
+	} 
+	
+
+}
+
+/* <-- primary top menu */
