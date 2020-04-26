@@ -71,6 +71,58 @@
 
         /* <-- scroll to top */
 
+        /* mobile top menu --> */
+
+        $("#primary-menu-toggle").click(function() { 
+            $('.mobile-menu').fadeIn();
+            $(".mobile-menu__container").show("slide", { direction: "left" }, 300); 
+            // $(".mobile-menu__container").show("slide", { direction: "left" }, 300); 
+        });
+
+        $("#mobile-menu-close").click(function() { 
+            $(".mobile-menu__container").hide("slide", { direction: "left" }, 300); 
+            $('.mobile-menu').fadeOut();
+        });
+
+        $(document).mouseup(function (e){ 
+            var field = $(".mobile-menu__container"); 
+            if (!field.is(e.target) 
+                && field.has(e.target).length === 0) {
+                    $(".mobile-menu__container").hide("slide", { direction: "left" }, 300); 
+                    $('.mobile-menu').fadeOut();
+            }
+        });
+
+        $("#primary-menu-mobile > .menu-item-has-children > a").click(function(e) { /* 2 level menu */
+            e.preventDefault();
+            console.log(e.target);
+            console.log(this);
+            $(this).siblings(".sub-menu").addClass("sub-menu--opened");
+            $(this).siblings(".sub-menu").show("slide", { direction: "right" }, 300); 
+            $("#mobile-menu-back").animate({
+                opacity: 1
+            }, 'slow');
+        });
+
+        $(".menu-item-has-children > a + .sub-menu > .menu-item-has-children > a").click(function(e) { /* 3 level menu */
+            e.preventDefault();
+            console.log(e.target);
+            console.log(this);
+            $(this).siblings(".sub-menu").addClass("sub-menu--opened");
+            $(this).siblings(".sub-menu").show("slide", { direction: "left" }, 300); 
+        });
+
+
+        /* <-- mobile top menu */
+
+        // $("#search-open").click(function() { 
+        //     $("#search-form").show("slide", { direction: "right" }, 300); 
+        // });
+        // $("#search-close").click(function(event) { 
+        //     event.preventDefault();
+        //     $("#search-form").hide("slide", { direction: "right" }, 300); 
+        // });
+
 
 
     });

@@ -89,4 +89,17 @@ figure {
 	}
 }
 
+.invisible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.d-none {
+	display: none;
+}
+
+.d-flex {
+	display: flex;
+}
+
 @import "tables";
