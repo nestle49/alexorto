@@ -226,3 +226,56 @@ function get_nav_menu_items_by_location( $location, $args = [] ) {
     // Return menu post objects
     return $menu_items;
 }
+
+/* Custom post types */
+
+// add_action( 'init', 'my_unregister_post_type', 999 );
+// function my_unregister_post_type(){
+// 	unregister_post_type('product');
+// }
+
+function create_products() {
+	// if (!post_type_exists('Product')) {
+
+		$labels = array(
+			'name' => __('Товары'),
+			'singular_name' => __('Товар'),
+			'add_new' => __('Добавить новый'),
+			'add_new_item' => __('Добавить новый товар'),
+			'edit_item' => __('Редактировать товар'),
+			'new_item' => __('Добавить новый товар'),
+			'view_item' => __('Просмотр товара'),
+			'search_items' => __('Найти товар'),
+			'not_found' => __('Товар не найденг'),
+			'not_found_in_trash' => __('Товар не найден в корзине'),
+			'parent_item_colon'  => '',
+			'menu_name' => 'Товары'
+		);
+		$supports = array(
+			'title',
+			'editor',
+			'thumbnail',
+			'author',
+			'revisions',
+			'page-attributes',
+		);
+
+		$args = array(
+			'labels' => $labels,
+			'supports' => $supports,
+			'hierarchical' => true,
+			'public' => true,
+			'show_ui' => true,
+			'capability_type' => 'page',
+			'rewrite' => array('slug' => '/', 'with_front' => false),
+			// Change slug here for models
+			'menu_position' => 5,
+			'menu_icon' => 'dashicons-cart',
+			'has_archive' => false,
+		);
+ 
+    	register_post_type( 'product', $args);
+	// }
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_products' );
