@@ -145,6 +145,10 @@ function alexorto_scripts() {
 		wp_enqueue_script( 'home-swipers-js', get_template_directory_uri() . '/js/home-swipers.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/home-swipers.js' ) , true );
 	}
 
+	if ( is_page_template('page-catalog.php') ) {
+		wp_enqueue_script( 'pagination-js', get_template_directory_uri() . '/assets/pagination.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/pagination.min.js' ) , true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -227,55 +231,58 @@ function get_nav_menu_items_by_location( $location, $args = [] ) {
     return $menu_items;
 }
 
-/* Custom post types */
-
-// add_action( 'init', 'my_unregister_post_type', 999 );
-// function my_unregister_post_type(){
-// 	unregister_post_type('product');
-// }
-
-function create_products() {
-	// if (!post_type_exists('Product')) {
-
-		$labels = array(
-			'name' => __('Товары'),
-			'singular_name' => __('Товар'),
-			'add_new' => __('Добавить новый'),
-			'add_new_item' => __('Добавить новый товар'),
-			'edit_item' => __('Редактировать товар'),
-			'new_item' => __('Добавить новый товар'),
-			'view_item' => __('Просмотр товара'),
-			'search_items' => __('Найти товар'),
-			'not_found' => __('Товар не найденг'),
-			'not_found_in_trash' => __('Товар не найден в корзине'),
-			'parent_item_colon'  => '',
-			'menu_name' => 'Товары'
-		);
-		$supports = array(
-			'title',
-			'editor',
-			'thumbnail',
-			'author',
-			'revisions',
-			'page-attributes',
-		);
-
-		$args = array(
-			'labels' => $labels,
-			'supports' => $supports,
-			'hierarchical' => true,
-			'public' => true,
-			'show_ui' => true,
-			'capability_type' => 'page',
-			'rewrite' => array('slug' => '/', 'with_front' => false),
-			// Change slug here for models
-			'menu_position' => 5,
-			'menu_icon' => 'dashicons-cart',
-			'has_archive' => false,
-		);
- 
-    	register_post_type( 'product', $args);
-	// }
+function apply_categories_for_pages(){
+	add_meta_box( 'categorydiv', 'Категории', 'post_categories_meta_box', 'page', 'side', 'normal'); 
+	register_taxonomy_for_object_type('category', 'page'); 
 }
-// Hooking up our function to theme setup
-add_action( 'init', 'create_products' );
+
+add_action('admin_init','apply_categories_for_pages');
+ 
+function true_expanded_request_category($q) {
+	if (isset($q['category_name'])) 
+		$q['post_type'] = array('post', 'page');
+	return $q;
+}
+ 
+add_filter('request', 'true_expanded_request_category');
+
+function true_apply_tags_for_pages(){
+	add_meta_box( 'tagsdiv-post_tag', 'Теги', 'post_tags_meta_box', 'page', 'side', 'normal' );
+	register_taxonomy_for_object_type('post_tag', 'page');
+}
+ 
+add_action('admin_init','true_apply_tags_for_pages');
+ 
+function true_expanded_request_post_tags($q) {
+	if (isset($q['tag']))
+		$q['post_type'] = array('post', 'page');
+	return $q;
+}
+ 
+add_filter('request', 'true_expanded_request_post_tags');
+
+add_filter( 'taxonomy_labels_'.'category', 'change_labels_category' );
+function change_labels_category( $labels ) {
+
+	$my_labels = array(
+		'name'                  => 'Категории',
+		'singular_name'         => 'Категория',
+		'search_items'          => 'Поиск категорий',
+		'all_items'             => 'Все категории',
+		'parent_item'           => 'Родительская категория',
+		'parent_item_colon'     => 'Родительская категория:',
+		'edit_item'             => 'Изменить категорию',
+		'view_item'             => 'Просмотреть категорию',
+		'update_item'           => 'Обновить категорию',
+		'add_new_item'          => 'Добавить новую категорию',
+		'new_item_name'         => 'Название новой категории',
+		'not_found'             => 'Категория не найдена',
+		'no_terms'              => 'Категорий нет',
+		'items_list_navigation' => 'Навигация по списку категорий',
+		'items_list'            => 'Список категорий',
+		'back_to_items'         => '← Назад к категориям',
+		'menu_name'             => 'Категории',
+	);
+
+	return $my_labels;
+}
