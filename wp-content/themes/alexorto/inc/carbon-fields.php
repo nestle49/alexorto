@@ -7,8 +7,9 @@ add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
     Container::make( 'theme_options', __( 'Главная страница', 'crb' ) )
         ->add_tab( 'Шапка', array(
-            Field::make( 'text', 'header_phone', 'Номер телефона в шапке' )->set_width( 50 ),
-            Field::make( 'text', 'header_address', 'Адрес' )->set_width( 50 ),
+            Field::make( 'text', 'header_phone', 'Номер телефона в шапке' )->set_width( 30 ),
+            Field::make( 'text', 'header_email', 'E-mail в шапке' )->set_width( 30 ),
+            Field::make( 'text', 'header_address', 'Адрес' )->set_width( 30 ),
         ) )
         ->add_tab( 'Слайдер',  array(
             Field::make( 'complex', 'crb_slides', 'Слайдер' )
@@ -62,7 +63,7 @@ function crb_attach_post_meta() {
         ->set_priority( 'high' )
         ->where( 'post_type', '=', 'page' )
         ->add_fields( array(
-            Field::make( 'image', 'top_banner', 'Баннер' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>1440x342px</b>'),
+            Field::make( 'image', 'top_banner', 'Баннер' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>1440x150px</b>'),
             Field::make( 'image', 'top_banner_tablet', 'Баннер для планшета' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>768px</b>'),
             Field::make( 'image', 'top_banner_mobile', 'Баннер для мобильного' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>480px</b>'),
         ) );    

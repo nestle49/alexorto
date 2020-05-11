@@ -37,7 +37,15 @@ $data['top_banner']['mobile'] = carbon_get_the_post_meta( 'top_banner_mobile' );
 
 				<div class="site-header__contacts">
 					<a href="tel:<?= str_replace(' ', '', carbon_get_theme_option( 'header_phone' )) ?>" class="site-header__link"> <?= carbon_get_theme_option( 'header_phone' ) ?> </a>
+					<a href="mailto:<?= carbon_get_theme_option( 'header_email' ) ?>" class="site-header__link"> <i class="material-icons">email</i> </a>
 				</div>
+
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-4',
+						'menu_id'        => 'front-menu',
+					) );
+				?>
 
 				<div class="site-header__search">
 				 <?= get_search_form() ?>
