@@ -86,11 +86,11 @@
         & svg {
             color: #c7cbd1;
             height: auto;
-            transition: color .15s;
+            transition: all .15s;
         }
         &:hover {
             & svg {
-                transition: color .15s;
+                transition: all .15s;
             }
         }
         &--fb {
@@ -120,6 +120,17 @@
             &:hover {
                 & svg {
                     color: #00acee;
+                }
+            }
+        }
+        &--instagram {
+            & svg {
+                fill: #c7cbd1;
+                width: 36px;
+            }
+            &:hover {
+                & svg {
+                    fill: #C13584;
                 }
             }
         }

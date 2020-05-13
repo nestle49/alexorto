@@ -102,7 +102,7 @@
             }, 'slow');
         });
 
-        $(".menu-item-has-children > a + .sub-menu > .menu-item-has-children > a").click(function(e) { /* 3 level menu opened */
+        $("#primary-menu-mobile .menu-item-has-children > a + .sub-menu > .menu-item-has-children > a").click(function(e) { /* 3 level menu opened */
             e.preventDefault();
             $(this).siblings(".sub-menu").addClass("sub-menu--opened");
             $(this).siblings(".sub-menu").show("slide", { direction: "left" }, 300); 
