@@ -67,7 +67,40 @@ function crb_attach_post_meta() {
             Field::make( 'image', 'top_banner_tablet', 'Баннер для планшета' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>768px</b>'),
             Field::make( 'image', 'top_banner_mobile', 'Баннер для мобильного' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>480px</b>'),
         ) );    
+    Container::make( 'post_meta', __( 'Категории товаров для вывода на странице', 'crb' ) )
+    ->set_context( 'carbon_fields_after_title' )
+    ->set_priority( 'high' )
+    ->where( 'post_template', '=', 'page-catalog.php' )
+    ->add_fields( array(
+        Field::make( 'multiselect', 'categories-list', 'Выберите категории' )->set_width( 100 )
+                    ->add_options( 'get_categories_items' ),
+        Field::make( 'rich_text', 'seo_before_catalog', 'Текст перед каталогом' )->set_width( 100 )->help_text('SEO-текст перед списком товаров'),
+        Field::make( 'rich_text', 'seo_after_catalog', 'Текст после каталога' )->set_width( 100 )->help_text('SEO-текст после списка товаров')
+                    
+    ) );
+    Container::make( 'post_meta', __( 'Данные о товаре', 'crb' ) )
+    ->set_context( 'carbon_fields_after_title' )
+    ->set_priority( 'high' )
+    ->where( 'post_template', '=', 'page-product.php' )
+    ->add_fields( array(
+        Field::make( 'media_gallery', 'product_gallery', 'Добавьте изображения товара' )->set_type( array( 'image') ),
+        
+        // Field::make( 'set', 'crb_azs_fuels', 'Добавьте виды топлива АЗС' )
+        // ->set_width( 50 )
+        // ->add_options( array(
+        //     'АИ-92' => 'АИ-92',
+        //     'АИ-95' => 'АИ-95',
+        //     'ДТ' => 'ДТ',
+        // ) ),
+
+    ) );
 }
+
+
+
+
+
+
 function get_list_menu() {
     $menus = get_registered_nav_menus();
     unset($menus['menu-1'], $menus['menu-2']);
@@ -91,5 +124,22 @@ function get_hashtable_items() {
     }
 
     return $hashtable_items;
+}
+
+function get_categories_items() {
+
+    $items = get_categories( array( 
+        'hide_empty'     => 0, 
+        // 'meta_value'   => 'page-item.php', 
+        // 'hierarchical' => 0
+    ));
+
+    $categories_items = array();
+
+    foreach( $items as $item ){
+        $categories_items[$item->term_id] = $item->name;
+    }
+
+    return $categories_items;
 }
 

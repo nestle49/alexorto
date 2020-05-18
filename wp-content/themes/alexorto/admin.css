@@ -1,0 +1,12 @@
+.cf-multiselect__multi-value {
+    background-color: #5cbf96 !important;
+    color: #fff !important;
+}
+
+.cf-multiselect__multi-value__label {
+    color: #ffffff !important;
+}
+
+.cf-multiselect__multi-value__remove:hover {
+    cursor: pointer;
+}

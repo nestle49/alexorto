@@ -147,6 +147,7 @@ function alexorto_scripts() {
 
 	if ( is_page_template('page-catalog.php') ) {
 		wp_enqueue_script( 'pagination-js', get_template_directory_uri() . '/assets/pagination.min.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/assets/pagination.min.js' ) , true );
+		wp_enqueue_script( 'pagination-catalog-js', get_template_directory_uri() . '/js/pagination-catalog.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/pagination-catalog.js' ) , true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -186,6 +187,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Include Carbon Service
  */
 require_once dirname(__FILE__) . '/service/CarbonService.php';
+
+/**
+ * Include Store Service
+ */
+require_once dirname(__FILE__) . '/service/StoreService.php';
 
 /**
  *  Carbon Fields
@@ -286,3 +292,8 @@ function change_labels_category( $labels ) {
 
 	return $my_labels;
 }
+
+function custom_admin_styles(){
+	wp_enqueue_style("style-admin", get_template_directory_uri() . "/admin.css", array(), true);
+}
+add_action('admin_head', 'custom_admin_styles');
