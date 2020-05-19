@@ -47,8 +47,10 @@ get_header();
           <?php endforeach; ?>
         <?php endif; ?>
       </div>
-      <div id="pagination-container" class="pagination">
-      </div>
+
+      <?php if( is_array( StoreService::getProductsAtCurrentPage() ) && count(StoreService::getProductsAtCurrentPage()) > 12 ): ?>
+        <div id="pagination-container" class="pagination"></div>
+      <?php endif; ?>
 
       <?php if( carbon_get_the_post_meta( 'seo_after_catalog' ) ): ?>
         <div class="seo-after-catalog">
