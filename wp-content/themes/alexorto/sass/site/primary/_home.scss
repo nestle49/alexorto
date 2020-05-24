@@ -60,7 +60,8 @@
 // Home Services -->
 
 .home-services {
-    padding: 40px 15px;
+    padding: 10px 15px;
+    padding: 0.675rem 1.0125rem;
     &__wrapper {
         display: flex;
         flex-direction: column;
@@ -162,3 +163,86 @@
 }
 
 // <-- Home Services
+
+// Home products -->
+
+.home-products {
+    margin-top: 20px;
+    margin-top: 1.25rem;
+    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
+    &__heading {
+        margin: 40px 0;
+        margin: 2.5rem 0;
+        text-align: center;
+    }
+    &__header {
+        font-size: 30px;
+        font-size: 1.875rem;
+        font-weight: 400;
+        font-family: "Basis Grotesque Pro Of White",sans-serif;
+        line-height: 38px;
+        line-height: 2.375rem;
+        letter-spacing: .2px;
+        letter-spacing: .0125rem;
+        @include media('<tablet'){
+            font-size: 29px;
+            font-size: 1.8125rem;
+            line-height: 35px;
+            line-height: 2.1875rem;
+        } 
+        @include media('<545px'){
+            font-size: 23px;
+            font-size: 1.4375rem;
+            line-height: 30px;
+            line-height: 1.875rem;
+        } 
+    }
+    &__subheader {
+        display: block;
+        font-size: 23px;
+        font-size: 1.4375rem;
+        line-height: 30px;
+        line-height: 1.875rem;
+        letter-spacing: normal;
+        color: #72b39a;
+    }
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0 15px;
+        padding: 0 1.0125rem;
+
+    }
+    &__list-item {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-left: .625rem;
+        padding-right: 10px;
+        padding-right: .625rem;
+        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
+        flex-basis: 25%;
+        max-width: 25%;
+        @include media('<desktop'){
+            flex-basis: 50%;
+            max-width: 50%;
+        } 
+        @include media('<545px'){
+            flex-basis: 100%;
+            max-width: 100%;
+        } 
+    }
+    & .products-list { 
+        &__image {
+            @include media('<desktop'){
+                padding: 300px 0 0;
+                padding: 18.75rem 0 0;
+            } 
+        }
+    }
+}
+
+// <-- Home products

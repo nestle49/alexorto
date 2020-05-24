@@ -66,7 +66,7 @@ get_header();
                 <?php endif; ?>
             </div>
             <div class="product__detail-row">
-                <button class="button button--large button--lightgreen" type="button"> Заказать </button>
+                <button class="button button--large button--lightgreen" data-fancybox data-animation-duration="700" data-src="#animatedModal" type="button"> Заказать </button>
             </div>
             <div class="product__detail-row product__detail-row--relative">
                 <span class="product__show product__link">Уточнить наличие размера</span>

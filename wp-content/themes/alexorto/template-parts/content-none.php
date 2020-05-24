@@ -9,9 +9,9 @@
 
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found container">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'alexorto' ); ?></h1>
+		<h1 class="page-title"><?= esc_html_e( 'Результатов не найдено', 'alexorto' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -31,19 +31,13 @@
 				esc_url( admin_url( 'post-new.php' ) )
 			);
 
-		elseif ( is_search() ) :
-			?>
-
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'alexorto' ); ?></p>
-			<?php
-			get_search_form();
-
 		else :
 			?>
 
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'alexorto' ); ?></p>
+			<p><?php esc_html_e( 'Извините, совпадений не найдено. Пожалуйста, попробуйте другой запрос.', 'alexorto' ); ?></p>
+			<p><a href="/" class="lightgreen">Или вернитесь на главную</a></p>
+			
 			<?php
-			get_search_form();
 
 		endif;
 		?>

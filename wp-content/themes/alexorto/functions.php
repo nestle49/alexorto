@@ -49,7 +49,6 @@ if ( ! function_exists( 'alexorto_setup' ) ) :
 			'menu-3' => esc_html__( 'Page', 'alexorto' ),
 			'menu-4' => esc_html__( 'Front', 'alexorto' ),
 			'menu-5' => esc_html__( 'Catalog', 'alexorto' ),
-			// 'menu-6' => esc_html__( 'Контакты', 'alexorto' ),
 		) );
 
 		/*
@@ -134,6 +133,10 @@ function alexorto_scripts() {
 	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/swiper/swiper.min.js', array( 'jquery' ), null, true );
 
 	wp_enqueue_style( 'jquery-ui-style', get_template_directory_uri() . '/assets/jquery-ui-1.12.1/jquery-ui.min.css', array(), null );
+
+	wp_enqueue_style( 'fancybox-style', get_template_directory_uri() . '/assets/fancybox/jquery.fancybox.min.css', array(), null );
+	
+	wp_enqueue_script( 'fancybox-js', get_template_directory_uri() . '/assets/fancybox/jquery.fancybox.min.js', array( 'jquery' ), null, true );
 
 	wp_enqueue_script( 'jquery-ui-js', get_template_directory_uri() . '/assets/jquery-ui-1.12.1/jquery-ui.min.js', array( 'jquery' ), null, true );
 

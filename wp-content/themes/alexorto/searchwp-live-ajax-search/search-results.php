@@ -17,19 +17,59 @@
  *
  * You can use ~/searchwp-live-search/assets/styles/style.css as a guide to customize
  */
+
+$count = 0;
+$limit_results = 30;
+$includes_products = false;
+$includes_post = false;
+
+if ( have_posts() ) :
+	while ( have_posts() ) : 
+		the_post(); 
+		if ( get_page_template_slug( get_the_ID() ) == 'page-product.php' ) {
+			$includes_products = true;
+		} else $includes_post = true;
+	endwhile; 	
+endif;
+
 ?>
 
 <?php if ( have_posts() ) : ?>
-	<?php while ( have_posts() ) : the_post(); ?>
-		<?php $post_type = get_post_type_object( get_post_type() ); ?>
-		<div class="searchwp-live-search-result" role="option" id="" aria-selected="false">
-			<p><a href="<?php echo esc_url( get_permalink() ); ?>">
-				<?php the_title(); ?> &raquo;
-			</a></p>
-		</div>
-	<?php endwhile; ?>
+	<?php global $post; ?>
+	<?php if($includes_products): ?>
+		<a class="search_title_ajax" href="#"><?= 'Товары' ?></a>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php if( get_page_template_slug( get_the_ID() ) == 'page-product.php' && $count < $limit_results ): ?>
+				<?php $count++; ?>
+					<div class="searchwp-live-search-result" role="option" id="" aria-selected="false">
+						<a href="<?= esc_url( get_permalink() ); ?>">
+							<?php if( get_the_post_thumbnail_url($post->ID) ): ?>
+								<span class="search_ajax_img" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID) ?>')"></span>
+							<?php endif; ?>
+							<span class="search_ajax_text"><?php the_title(); ?></span>
+						</a>
+					</div>
+			<?php endif; ?>
+		<?php endwhile; ?>
+<?php endif; ?>
+<?php if($includes_post): ?>
+		<a class="search_title_ajax" href="#"><?= 'Страницы' ?></a>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php if( get_page_template_slug( get_the_ID() ) != 'page-product.php' && $count < $limit_results ): ?>
+					<?php $count++; ?>
+						<div class="searchwp-live-search-result" role="option" id="" aria-selected="false">
+						<a href="<?= esc_url( get_permalink() ); ?>">
+							<?php if( get_the_post_thumbnail_url($post->ID) ): ?>
+								<span class="search_ajax_img" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID) ?>')"></span>
+							<?php endif; ?>
+							<span class="search_ajax_text"><?= the_title(); ?>
+						</a>
+					</div>
+				<?php endif; ?>
+			<?php endwhile; ?>
+<?php endif; ?>
 <?php else : ?>
 	<p class="searchwp-live-search-no-results" role="option">
-		<em><?php esc_html_e( 'No results found.', 'swplas' ); ?></em>
+		<em><?= pll_e('Совпадений не найдено'); ?></em>
 	</p>
 <?php endif; ?>

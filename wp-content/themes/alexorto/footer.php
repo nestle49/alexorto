@@ -9,28 +9,10 @@
  * @package alexorto
  */
 
+	get_template_part( 'template-parts/mobile-menu' );
+	get_template_part( 'template-parts/order-form' );
+
 ?>
-
-	<section class="mobile-menu">
-		<div class="mobile-menu__container">
-			<div class="mobile-menu__buttons">
-				<button class="mobile-menu__button" id="mobile-menu-back">
-				</button>
-				<button class="mobile-menu__button" id="mobile-menu-close">
-				</button>
-			</div>
-			<div class="mobile-menu__wrapper">
-				<?php
-					wp_nav_menu( array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu-mobile',
-					) );
-				?>
-			</div>
-
-		</div>
-	</section>
-
 	</div><!-- #content -->
 	<footer id="colophon" class="site-footer">
 		<button id="scroll-top"><i class="material-icons">expand_less</i></button>

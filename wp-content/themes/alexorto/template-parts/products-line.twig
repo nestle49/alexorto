@@ -1,0 +1,39 @@
+<!-- Home products -->
+{% if products %}
+    <section class="home-products">
+
+        {% if header %}
+            <div class="home-products__heading">
+    			<h2 class="home-products__header">
+                    {% if subheader %} <span class="home-products__subheader"> {{ subheader }} </span> {% endif %}
+                    {{ header }}               
+                </h2>
+    		</div>
+        {% endif %}
+
+        <div class="home-products__list">
+            {% for product in products %} 
+                <div class="home-products__list-item">
+                    <a href="{{ product.guid }}" class="products-list__image" style="background-image: url('{{ product.preview }}');">
+                    {% if product.is_new %}
+                        <span class="product-label product-label--new">Новинка</span>
+                    {% endif %}
+                    </a>
+                    {% if product.code %}
+                        <span class="products-list__code"> {{ product.code }} </span>
+                    {% endif %}
+                    <a href="{{ product.guid }}" class="products-list__title">
+                        {{ product.post_title }}
+                    </a>
+                    {% if product.price %}
+                        <span class="products-list__price"> {{ product.price }} ₽ </span>
+                    {% endif %}
+                    <a href="{{ product.guid }}" class="products-list__button">
+                        Подробнее
+                    </a>
+                </div>
+            {% endfor %} 
+         </div>
+
+    </section>
+{% endif %}

@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<main id="main" class="site-main tags-page archive-page">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -25,18 +25,41 @@ get_header();
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
+				global $post;
 				the_post();
+			?>	
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				<div class="result__line">
+						<?php if( get_the_post_thumbnail_url($post->ID) ): ?>
+							<a href="<?= esc_url( get_permalink() ); ?>" class="result__img" style="background-image:url('<?= get_the_post_thumbnail_url($post->ID) ?>')"></a>
+						<?php endif; ?>
+						<div class="result__content">
+							<a href="<?= esc_url( get_permalink() ); ?>" class="result__title">
+								<?php the_title(); ?>
+							</a>
 
+							 <?php if( carbon_get_the_post_meta( 'product_code' ) ): ?>
+                        		<span class="result__code product__code"> 
+                        		    <?= carbon_get_the_post_meta( 'product_code' ) ?>
+                        		</span>
+                			<?php endif; ?>
+
+							<?php if ( is_array(carbon_get_the_post_meta( 'product_sizes' )) && (count(carbon_get_the_post_meta( 'product_sizes' )) > 0) ): ?>
+								<div class="product__detail-row">
+									<?php foreach(carbon_get_the_post_meta( 'product_sizes' ) as $size): ?>
+                        				<span class="product__size"> <?= $size ?> </span>
+									<?php endforeach; ?>
+								</div>
+							<?php endif; ?>
+							
+							<a href="<?= esc_url( get_permalink() ); ?>" class="products-list__button">
+                        		Подробнее
+                    		</a>
+						</div>
+				</div>
+
+			<?php							
 			endwhile;
-
-			the_posts_navigation();
 
 		else :
 
@@ -49,5 +72,4 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

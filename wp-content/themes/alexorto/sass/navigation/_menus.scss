@@ -91,6 +91,12 @@
 		opacity: 1;
 		transition: opacity .1s linear,top .1s linear,bottom .1s linear,visibility .1s linear;
 	}
+	.sub-menu {
+		& .sub-menu {
+			overflow: auto;
+			max-height: 75vh;
+		}
+	}
 	#primary-menu {
 
 		& > .menu-item > .sub-menu {
@@ -391,6 +397,7 @@
 	}
 	&__wrapper {
 		overflow: auto;
+		height: 100%;
 		max-height: 100%;
 		position: relative;
 	}

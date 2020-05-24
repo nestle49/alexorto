@@ -19,13 +19,10 @@ get_header();
 		<main id="main" class="site-main">
 		<?php 
 			Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); 
-			// Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); 
+			Timber::render('./template-parts/products-line.twig', CarbonService::getFeaturedBefore()); 
 			Timber::render('./template-parts/home-services.twig', CarbonService::getHomeServices()); 
-			// Timber::render('./template-parts/home-slider.twig', CarbonService::getSlidersHomePage()); 
-		
+			Timber::render('./template-parts/products-line.twig', CarbonService::getFeaturedAfter()); 
 		?>
-
-	
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

@@ -22,6 +22,8 @@ function crb_attach_theme_options() {
                 ) ),
         ) )
         ->add_tab( 'Рекомендуемые — первый блок',  array(
+            Field::make( 'text', 'featured-before-header', 'Заголовок секции' )->set_width(100),
+            Field::make( 'text', 'featured-before-subheader', 'Подзаголовок секции' )->set_width(100),
             Field::make( 'multiselect', 'featured-before-list', 'Выберите рекомендуемые товары' )->set_width( 100 )
                     ->add_options( 'get_hashtable_items' )
         ) )
@@ -36,8 +38,13 @@ function crb_attach_theme_options() {
                 ) ),
         ) )
         ->add_tab( 'Рекомендуемые — второй блок',  array(
+            Field::make( 'text', 'featured-after-header', 'Заголовок секции' )->set_width(100),
+            Field::make( 'text', 'featured-after-subheader', 'Подзаголовок секции' )->set_width(100),
             Field::make( 'multiselect', 'featured-after-list', 'Выберите рекомендуемые товары' )->set_width( 100 )
                     ->add_options( 'get_hashtable_items' )
+        ) )
+        ->add_tab( 'Форма заказа',  array(
+            Field::make( 'text', 'order-form', 'Вставьте шорткод формы заказа' )->set_width(100),
         ) );
     Container::make( 'nav_menu_item', __( 'Top menu' ) )
     ->add_fields( array(
@@ -105,7 +112,6 @@ function crb_attach_post_meta() {
             '46' => '46',
             '47' => '47',
         ) ),
-
     ) );
 }
 
@@ -120,9 +126,10 @@ function get_list_menu() {
 function get_hashtable_items() {
 
     $items = get_pages( array( 
-        // 'meta_key'     => '_wp_page_template', 
-        // 'meta_value'   => 'page-item.php', 
-        // 'hierarchical' => 0
+        'post_type' => 'page',
+        'meta_key'     => '_wp_page_template', 
+        'meta_value'   => 'page-product.php', 
+        'hierarchical' => 0
     ));
 
     $hashtable_items = array();
@@ -138,8 +145,6 @@ function get_categories_items() {
 
     $items = get_categories( array( 
         'hide_empty'     => 0, 
-        // 'meta_value'   => 'page-item.php', 
-        // 'hierarchical' => 0
     ));
 
     $categories_items = array();

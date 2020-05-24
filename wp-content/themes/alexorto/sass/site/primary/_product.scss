@@ -6,10 +6,6 @@
     max-width: 72.5rem;
     margin: 0 auto;
     overflow: hidden;
-    // display: flex;
-    // @include media('<tablet'){
-    //     flex-wrap: wrap;
-    // } 
 }
 
 .product__swiper {
@@ -164,6 +160,8 @@
         width: 40%;
         padding-left: 15px;
         padding-right: 15px;
+        padding-top: 20px;
+        padding-top: 1.25rem;
         @include media('<desktop'){
             width: 100%;
         } 
@@ -199,6 +197,7 @@
     &__show {
         position: absolute;
         background: #ffffff;
+        cursor: pointer;
     }
     &__size {
         display: inline-flex;
@@ -212,6 +211,7 @@
         border: .0625rem solid #dfdfdf;
         border-radius: 6px;
         border-radius: .375rem;
+        cursor: default;
         &:hover {
             border-color: #5cbf96;
         }
