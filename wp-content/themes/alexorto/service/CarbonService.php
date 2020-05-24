@@ -4,7 +4,6 @@
 class CarbonService
 {
 
-    
     /**
     * @return array
     *
@@ -26,6 +25,13 @@ class CarbonService
         return $data;
     }
 
+    /**
+    * @return array
+    *
+    */
+    public static function getProductGallery()
+    {
+        return carbon_get_the_post_meta( 'product_gallery' );
+    }
 
-   
 }

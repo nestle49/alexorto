@@ -150,6 +150,10 @@ function alexorto_scripts() {
 		wp_enqueue_script( 'pagination-catalog-js', get_template_directory_uri() . '/js/pagination-catalog.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/pagination-catalog.js' ) , true );
 	}
 
+	if ( is_page_template('page-product.php') ) {
+		wp_enqueue_script( 'product-swipers-js', get_template_directory_uri() . '/js/product-swipers.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/product-swipers.js' ) , true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -33,13 +33,19 @@ get_header();
           <?php foreach(StoreService::getProductsAtCurrentPage() as $product): ?>
             <div class="products-list__item">
               <a href="<?= $product->guid ?>" class="products-list__image" style="background-image: url('<?= $product->preview ?>');">
-                <span class="product-label product-label--new">Новинка</span>
+                <?php if( $product->is_new ): ?>
+                  <span class="product-label product-label--new">Новинка</span>
+                <?php endif; ?>
               </a>
-              <span class="products-list__code"> Code </span>
+              <?php if( $product->code ): ?>
+                <span class="products-list__code"> <?= $product->code ?> </span>
+              <?php endif; ?>
               <a href="<?= $product->guid ?>" class="products-list__title">
                 <?= $product->post_title ?>
               </a>
-              <span class="products-list__price"> Price ₽ </span>
+              <?php if( $product->price ): ?>
+                <span class="products-list__price"> <?= $product->price ?> ₽ </span>
+              <?php endif; ?>
               <a href="<?= $product->guid ?>" class="products-list__button">
                 Подробнее
               </a>

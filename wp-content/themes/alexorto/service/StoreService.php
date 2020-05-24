@@ -25,34 +25,12 @@ class StoreService
 
         foreach ($posts as $post) {
             $post->preview = get_the_post_thumbnail_url( $post->ID, 'full' );
-            // echo "<br><br>";
-            // var_dump(get_the_post_thumbnail_url( $post->ID, 'full' ));
-            // echo "<br><br>";
-            // $related[$related_key]['subtitle'] = get_post_meta( $post->ID, '_crb_item_subtitle', true);
-            // $related[$related_key]['price'] = get_post_meta( $post->ID, '_crb_item_price', true);
+            $post->is_new = get_post_meta( $post->ID, '_product_new', true);
+            $post->code = get_post_meta( $post->ID, '_product_code', true);
+            $post->price = get_post_meta( $post->ID, '_product_price', true);
         }
 
         return $posts;
         
-        // $related = array();
-
-        // foreach ($posts as $post) {
-        //    var_dump($post);
-        //    echo "<br>";
-        //    echo "<br>";
-        // }
-        
-        // foreach ($related_keys as $key => $related_key) {
-        //     $related[$related_key]['photo'] = get_the_post_thumbnail_url( $related_key, 'full' );
-        //     $related[$related_key]['url'] = get_the_guid( $related_key );
-        //     $related[$related_key]['title'] = get_the_title( $related_key );
-        //     $related[$related_key]['subtitle'] = get_post_meta( $related_key, '_crb_item_subtitle', true);
-        //     $related[$related_key]['price'] = get_post_meta( $related_key, '_crb_item_price', true);
-        // }
     }
-
-
-
-
-   
 }

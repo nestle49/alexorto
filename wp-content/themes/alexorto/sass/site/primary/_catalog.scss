@@ -1,7 +1,4 @@
 
-
-
-
 .catalog-page {
     padding: 0 15px;
     width: 100%;
@@ -178,6 +175,7 @@
     color: #fff;
     top: -1px;
     left: -1px;
+    z-index: 2;
     &--new {
         background-color: #5cbf96;
     }

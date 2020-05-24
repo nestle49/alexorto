@@ -84,22 +84,30 @@ function crb_attach_post_meta() {
     ->where( 'post_template', '=', 'page-product.php' )
     ->add_fields( array(
         Field::make( 'media_gallery', 'product_gallery', 'Добавьте изображения товара' )->set_type( array( 'image') ),
-        
-        // Field::make( 'set', 'crb_azs_fuels', 'Добавьте виды топлива АЗС' )
-        // ->set_width( 50 )
-        // ->add_options( array(
-        //     'АИ-92' => 'АИ-92',
-        //     'АИ-95' => 'АИ-95',
-        //     'ДТ' => 'ДТ',
-        // ) ),
+        Field::make( 'text', 'product_code', 'Артикул' )->set_width(50),
+        Field::make( 'text', 'product_price', 'Цена' )->set_width(50),
+        Field::make( 'checkbox', 'product_new', 'Новинка' )->set_option_value( 'yes' ),
+        Field::make( 'textarea', 'product_description', 'Краткое описание' ),
+        Field::make( 'set', 'product_sizes', 'Укажите размеры в наличии' )
+        ->set_width( 100 )
+        ->add_options( array(
+            '35' => '35',
+            '36' => '36',
+            '37' => '37',
+            '38' => '38',
+            '39' => '39',
+            '40' => '40',
+            '41' => '41',
+            '42' => '42',
+            '43' => '43',
+            '44' => '44',
+            '45' => '45',
+            '46' => '46',
+            '47' => '47',
+        ) ),
 
     ) );
 }
-
-
-
-
-
 
 function get_list_menu() {
     $menus = get_registered_nav_menus();
@@ -142,4 +150,3 @@ function get_categories_items() {
 
     return $categories_items;
 }
-
