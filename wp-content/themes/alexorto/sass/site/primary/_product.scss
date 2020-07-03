@@ -202,7 +202,6 @@
     &__size {
         display: inline-flex;
         justify-content: center;
-        align-items: center;
         line-height: 36px;
         width: 36px;
         height: 36px;
@@ -211,7 +210,7 @@
         border: .0625rem solid #dfdfdf;
         border-radius: 6px;
         border-radius: .375rem;
-        cursor: default;
+        cursor: pointer;
         &:hover {
             border-color: #5cbf96;
         }
@@ -229,6 +228,13 @@
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+    }
+    &__radio {
+        display: none;
+        &:checked + label {
+            cursor: default;
+            border-color: #5cbf96; 
+        }
     }
 }
 

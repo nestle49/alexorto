@@ -17,7 +17,7 @@ function crb_attach_theme_options() {
                 ->add_fields( array(
                     Field::make( 'image', 'slide_image', 'Изображение слайда' )->set_width( 33 )->set_value_type( 'url' )->set_required( true )->help_text('Рек. <b>2500x1184px</b>'),
                     Field::make( 'image', 'slide_image_tablet', 'Изображение слайда для планшета' )->set_width( 33 )->set_value_type( 'url' )->set_required( true )->help_text('Рек. <b>768px</b>'),
-                    Field::make( 'image', 'slide_image_mobile', 'Изображение слайда для мобильного' )->set_width( 33 )->set_value_type( 'url' )->set_required( true )->help_text('Рек. <b>480px</b>'),
+                    Field::make( 'image', 'slide_image_mobile', 'Изображение слайда для мобильного' )->set_width( 33 )->set_value_type( 'url' )->set_required( false )->help_text('Рек. <b>480px</b>'),
                     Field::make( 'text', 'slide_link', 'Ссылка слайда' )->set_width( 100 )->set_required( true ),
                 ) ),
         ) )
@@ -74,6 +74,55 @@ function crb_attach_post_meta() {
             Field::make( 'image', 'top_banner_tablet', 'Баннер для планшета' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>768px</b>'),
             Field::make( 'image', 'top_banner_mobile', 'Баннер для мобильного' )->set_width( 33 )->set_value_type( 'url' )->help_text('Рек. <b>480px</b>'),
         ) );    
+    Container::make( 'post_meta', __( 'Спойлеры', 'crb' ) )
+    ->set_context( 'carbon_fields_after_title' )
+    ->set_priority( 'default' )
+    ->where( 'post_template', '=', 'page-spoilers.php' )
+    ->add_fields( array(
+        Field::make( 'complex', 'spoilers', 'Спойлеры на странице' )
+            ->set_layout( 'tabbed-vertical' )
+            ->add_fields( array(
+                Field::make( 'text', 'header', 'Заголовок спойлера' )->set_width( 100 ),
+                Field::make( 'rich_text', 'content', 'Спойлер' )->set_width( 100 ),
+            ) ),
+    ) );
+    Container::make( 'post_meta', __( 'Спойлеры', 'crb' ) )
+    ->set_context( 'normal' )
+    ->set_priority( 'high' )
+    ->where( 'post_template', '=', 'page-spoilers-bottom.php' )
+    ->add_fields( array(
+        Field::make( 'complex', 'spoilers', 'Спойлеры на странице' )
+            ->set_layout( 'tabbed-vertical' )
+            ->add_fields( array(
+                Field::make( 'text', 'header', 'Заголовок спойлера' )->set_width( 100 ),
+                Field::make( 'rich_text', 'content', 'Спойлер' )->set_width( 100 ),
+            ) ),
+    ) );
+    Container::make( 'post_meta', __( 'Табы', 'crb' ) )
+    ->set_context( 'carbon_fields_after_title' )
+    ->set_priority( 'default' )
+    ->where( 'post_template', '=', 'page-tabs.php' )
+    ->add_fields( array(
+        Field::make( 'complex', 'tabs', 'Табы на странице' )
+            ->set_layout( 'tabbed-vertical' )
+            ->add_fields( array(
+                Field::make( 'text', 'header', 'Заголовок таба' )->set_width( 100 ),
+                Field::make( 'rich_text', 'content', 'Таб' )->set_width( 100 ),
+            ) )->set_max( 10 )->help_text('Макс. количество 10'),
+    ) );
+    Container::make( 'post_meta', __( 'Бренды', 'crb' ) )
+    ->set_context( 'carbon_fields_after_title' )
+    ->set_priority( 'default' )
+    ->where( 'post_template', '=', 'page-brands.php' )
+    ->add_fields( array(
+        Field::make( 'complex', 'brands', 'Бренды' )
+            ->set_layout( 'tabbed-vertical' )
+            ->add_fields( array(
+                Field::make( 'text', 'brand', 'Брэнд' )->set_width( 50 ),
+                Field::make( 'text', 'url', 'Ссылка' )->set_width( 50 ),
+                Field::make( 'image', 'logo', 'Логотип брэнда' )->set_width( 100 )->set_value_type( 'url' )->help_text('Загрузите логотип брэнда'),
+            ) ),
+    ) );
     Container::make( 'post_meta', __( 'Категории товаров для вывода на странице', 'crb' ) )
     ->set_context( 'carbon_fields_after_title' )
     ->set_priority( 'high' )

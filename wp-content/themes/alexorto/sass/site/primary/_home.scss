@@ -3,6 +3,9 @@
 
 .home-slider {
     max-width: 100%;
+    @include media('<tablet'){
+        display: none;
+    } 
     & .swiper-slide {
         background-repeat: no-repeat;
         background-position: center;
@@ -23,8 +26,6 @@
         margin-left: .125rem !important;
         margin-right: 2px !important;
         margin-right: .125rem !important;
-        // padding: 10px 0 !important;
-        // padding: .625rem 0 !important;
         opacity: .5;
         background-color: #fff;
         transition: opacity 250ms ease;
@@ -85,6 +86,10 @@
             align-items: center;
             flex-basis: 0;
             flex-grow: 1;
+        } 
+        @include media('<mobile'){
+            margin: 10px auto;
+            margin: .625rem auto;
         } 
         &--green {
             background-color: #e7faf2;

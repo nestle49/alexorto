@@ -42,7 +42,6 @@
             $("#product__phone").fadeIn(500); 
         });
 
-
         /* <-- fadeout */
 
     });

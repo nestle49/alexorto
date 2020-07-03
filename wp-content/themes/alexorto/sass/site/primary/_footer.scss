@@ -75,6 +75,8 @@
 
 .social-share {
     display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
     &__item {
         display: flex;
         justify-content: center;

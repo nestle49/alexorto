@@ -1,0 +1,14 @@
+<!-- Spoilers -->
+
+{% if spoilers %}
+    <section class="spoilers">
+        {% for spoiler in spoilers %} 
+            <div class="spoilers__item">
+                <input type="checkbox" class="spoilers__checkbox" checked>
+                <i class="spoilers__icon"></i>
+                <span class="spoilers__header"> {{ spoiler.header }} </span>
+                <div class="spoilers__content"> {{ spoiler.content|wpautop|shortcodes }} </div>
+            </div>
+        {% endfor %} 
+    </section>
+{% endif %}

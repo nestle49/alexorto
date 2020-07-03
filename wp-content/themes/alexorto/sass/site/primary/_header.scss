@@ -392,6 +392,10 @@ input[type="search"]::-webkit-search-cancel-button {
             }
         }
     }
+    &-wrapper {
+        border-bottom: 1px solid #f0f0f0;
+        border-bottom: .0625rem solid #f0f0f0;
+    }
     &__link {
         font-size: 15px;
         font-size: .9375rem;
@@ -459,3 +463,16 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* <-- breadcrumbs */
+
+/* top banner --> */
+
+.top-banner {
+    & picture {
+        display: flex;
+    }
+    @include media('<tablet'){
+        display: none;
+    } 
+}
+
+/* <-- top banner */

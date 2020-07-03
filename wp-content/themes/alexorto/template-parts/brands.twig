@@ -1,0 +1,11 @@
+<!-- Spoilers -->
+
+{% if brands %}
+    <section class="brands">
+        {% for brand in brands %} 
+            <a href={{ brand.url }} class="brands__item" title="{{ brand.brand }}">
+                <img src="{{ brand.logo }}">
+            </a>
+        {% endfor %} 
+    </section>
+{% endif %}

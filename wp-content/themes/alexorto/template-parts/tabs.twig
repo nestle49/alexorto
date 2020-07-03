@@ -1,0 +1,16 @@
+<!-- Tabs -->
+
+{% if tabs %}
+    <section class="tabs">
+        {% for tab in tabs %} 
+            {# {{ dump(tab) }} #}
+            <input type="radio" class="tabs__input" id="tab-btn-{{ loop.index }}" name="tabs"  {{ loop.first ? 'checked' }}>
+            <label for="tab-btn-{{ loop.index }}" class="tabs__label"> {{ tab.header }} </label>
+        {% endfor %} 
+        {% for tab in tabs %} 
+            <div class="tabs__content" id="content-{{ loop.index }}">
+                {{ tab.content|wpautop|shortcodes }}
+            </div>
+        {% endfor %} 
+    </section>
+{% endif %}

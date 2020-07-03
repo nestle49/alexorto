@@ -58,7 +58,8 @@ get_header();
             <div class="product__detail-row">
                 <?php if ( is_array(carbon_get_the_post_meta( 'product_sizes' )) && (count(carbon_get_the_post_meta( 'product_sizes' )) > 0) ): ?>
                     <?php foreach(carbon_get_the_post_meta( 'product_sizes' ) as $size): ?>
-                        <span class="product__size"> <?= $size ?> </span>
+                        <input type="radio" class="product__radio" name="product-size" id="product-size-<?= $size ?>"/>
+                        <label class="product__size" for="product-size-<?= $size ?>"> <?= $size ?> </label>
                     <?php endforeach; ?>
                 <?php endif; ?>
                 <?php if ( carbon_get_the_post_meta( 'product_price' ) ): ?>

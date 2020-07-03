@@ -84,4 +84,51 @@ class CarbonService
         return $data;
     }
 
+     /**
+    * @return object
+    *
+    */
+    public static function getTimberMenu($menu_name)
+    {
+        if (!$menu_name) { $menu_name = "Front"; }
+
+        $menu = new Timber\Menu( $menu_name, array( 'depth' => 1 ) );
+        $data['menu'] = $menu;
+        
+        return $data;
+    }
+
+     /**
+    * @return array
+    *
+    */
+    public static function getSpoilers()
+    {
+        $data['spoilers'] = carbon_get_the_post_meta( 'spoilers' );
+        return $data;
+    }
+
+    /**
+    * @return array
+    *
+    */
+    public static function getTabs()
+    {
+        $data['tabs'] = carbon_get_the_post_meta( 'tabs' );
+        return $data;
+    }
+
+    /**
+    * @return array
+    *
+    */
+    public static function getBrands()
+    {
+        $data['brands'] = carbon_get_the_post_meta( 'brands' );
+        return $data;
+    }
+
+
+    
+
 }

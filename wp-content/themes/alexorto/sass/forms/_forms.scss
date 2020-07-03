@@ -35,3 +35,16 @@
 }
 
 /* <-- cf7 order form*/
+
+div.wpcf7-validation-errors, 
+div.wpcf7-acceptance-missing {
+    border-color: #f5f2dd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+div.wpcf7-mail-sent-ok {
+    border-color: #47b889;
+    border-radius: 6px;
+    text-align: center;
+}

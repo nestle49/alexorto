@@ -536,3 +536,123 @@
 }
 
 /* <-- mobile top menu */
+
+/* <-- horizontally scrollable menu */
+
+.horizontally-menu {
+    border-bottom: 1px solid #f0f0f0;
+    border-bottom: .0625rem solid #f0f0f0;
+    max-height: 53px;
+	overflow: hidden;
+	display: none;
+	@include media('<desktop'){
+		display: flex;
+	} 
+}
+
+.home .horizontally-menu {
+	@include media('>=tablet'){
+		border: none;
+	} 
+}
+
+.h-menu {
+	margin: 0 auto;
+	padding: 0;
+	max-width: 578px;
+    max-width: fit-content;
+    white-space: nowrap;
+	display: flex;
+    list-style-type: none;
+	overflow: auto;
+	padding: 15px;
+	height: 65px;
+	padding-top: 16px;
+	padding-bottom: 26px;
+	&__item {
+		display: flex;
+		&:hover {
+			& > a {
+				color: #444;
+				&::before {
+					width: 100%;
+					background: #444;
+					opacity: 1;
+					transition: width .3s ease;
+				}
+				&::after {
+					width: 100%;
+					background: 0 0;
+					opacity: 1; 
+					transition: all 0s ease;
+				}
+			}
+		}
+		&--current {
+			& > a {
+				color: #444;
+				&:active,
+				&:focus,
+				&:visited {
+					color: #444;
+				}
+				&::before {
+					width: 100%;
+					background: #444;
+					opacity: 1;
+					transition: width .3s ease;
+				}
+				&::after {
+					width: 100%;
+					background: 0 0;
+					opacity: 1; 
+					transition: all 0s ease;
+				}
+			}
+		}
+	}
+	&__link {
+		margin-right: 15px;
+		margin-right: .9375rem;
+		position: relative;
+    	margin-bottom: 20px;
+    	margin-bottom: 1.25rem;
+    	font-size: 15px;
+    	font-size: .9375rem; 
+		color: #ababab;
+		white-space: nowrap;
+		margin-bottom: 0;
+		&:active,
+		&:focus,
+		&:visited {
+			color: #ababab;
+		}
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 1px; 
+			height: .0625rem;
+			width: 0;
+			opacity: 0;
+			transition: width 0s ease, opacity .3s ease;
+		}
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			height: 1px;
+			height: .0625rem;
+			width: 0;
+			background: #444;
+			opacity: 0;
+			transition: width .3s ease, opacity .3s ease;
+		}
+	}
+}
+
+/* <-- horizontally scrollable menu */

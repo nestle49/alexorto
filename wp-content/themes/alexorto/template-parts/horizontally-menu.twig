@@ -1,0 +1,12 @@
+<!-- horizontally scrollable menu -->
+{% if menu.items %}
+    <section class="horizontally-menu"> 
+        <ul class="h-menu">
+            {% for item in menu.items %}
+                <li class="h-menu__item {{ item.classes|join(' ') }} {{ item.current ? 'h-menu__item--current' }}">
+                    <a class="h-menu__link" href="{{ item.link }}" {{ item.is_external ? 'target="_blank" rel="nofollow"' }}> {{ item.title }} </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endif %}
