@@ -9,17 +9,25 @@
 
 get_header();
 
+$select_menu = carbon_get_the_post_meta( 'crb_select_field' );
+$menus = get_list_menu();
+if ($select_menu) {
+	$menu = $menus[$select_menu];
+}
+
 ?>
 
 <main class="custom-page">
-    <?php
-		wp_nav_menu( array(
-			'theme_location'  => 'menu-5',
-			'menu'            => 'catalog-menu',
-			'container'       => 'nav',
-			'container_class' => 'page-menu',
-		) );
-    ?>
+	<?php if ($select_menu && $select_menu !== 'menu-0'):  ?>
+		<?php
+			wp_nav_menu( array(
+				'theme_location'  => $select_menu,
+				'menu'            => $menu,
+				'container'       => 'nav',
+				'container_class' => 'page-menu',
+			) );
+		?>
+	<?php endif; ?>
     <div class="custom-content">
 		<?php
 			while ( have_posts() ) :

@@ -46,10 +46,10 @@ get_header();
 
 							<?php if ( is_array(carbon_get_the_post_meta( 'product_sizes' )) && (count(carbon_get_the_post_meta( 'product_sizes' )) > 0) ): ?>
 								<div class="product__detail-row">
-									<?php foreach(carbon_get_the_post_meta( 'product_sizes' ) as $size): ?>
+									<!-- <?php foreach(carbon_get_the_post_meta( 'product_sizes' ) as $size): ?>
                         				<span class="product__size"> <?= $size ?> </span>
-									<?php endforeach; ?>
-								</div>
+									<?php endforeach; ?> -->
+								</div><br><br>
 							<?php endif; ?>
 							
 							<a href="<?= esc_url( get_permalink() ); ?>" class="products-list__button">

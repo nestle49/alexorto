@@ -143,6 +143,7 @@ a.lightgreen {
   .animated-modal .order-subheader,
   .animated-modal .order-name,
   .animated-modal .order-phone,
+  .animated-modal .form-privacy,
   .animated-modal .btn--order {
 	transform: translateY(-50px);
 	opacity: 0;
@@ -157,6 +158,7 @@ a.lightgreen {
   .fancybox-slide--current .animated-modal .order-subheader,
   .fancybox-slide--current .animated-modal .order-name,
   .fancybox-slide--current .animated-modal .order-phone,
+  .fancybox-slide--current .animated-modal .form-privacy,
   .fancybox-slide--current .animated-modal .btn--order {
 	transform: translateY(0);
 	opacity: 1;
@@ -179,8 +181,12 @@ a.lightgreen {
 	transition-delay: .5s;
   }
 
-  .fancybox-slide--current .animated-modal .btn--order {
+  .fancybox-slide--current .animated-modal .form-privacy {
 	transition-delay: .6s;
+  }
+
+  .fancybox-slide--current .animated-modal .btn--order {
+	transition-delay: .7s;
   }
 
   .fancybox-close-small {
