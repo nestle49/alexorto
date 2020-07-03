@@ -143,6 +143,7 @@ a.lightgreen {
   .animated-modal .order-subheader,
   .animated-modal .order-name,
   .animated-modal .order-phone,
+  .animated-modal .order-size,
   .animated-modal .form-privacy,
   .animated-modal .btn--order {
 	transform: translateY(-50px);
@@ -158,6 +159,7 @@ a.lightgreen {
   .fancybox-slide--current .animated-modal .order-subheader,
   .fancybox-slide--current .animated-modal .order-name,
   .fancybox-slide--current .animated-modal .order-phone,
+  .fancybox-slide--current .animated-modal .order-size,
   .fancybox-slide--current .animated-modal .form-privacy,
   .fancybox-slide--current .animated-modal .btn--order {
 	transform: translateY(0);
@@ -181,12 +183,16 @@ a.lightgreen {
 	transition-delay: .5s;
   }
 
-  .fancybox-slide--current .animated-modal .form-privacy {
+  .fancybox-slide--current .animated-modal .order-size {
 	transition-delay: .6s;
   }
 
-  .fancybox-slide--current .animated-modal .btn--order {
+  .fancybox-slide--current .animated-modal .form-privacy {
 	transition-delay: .7s;
+  }
+
+  .fancybox-slide--current .animated-modal .btn--order {
+	transition-delay: .8s;
   }
 
   .fancybox-close-small {
@@ -271,6 +277,10 @@ a.lightgreen {
 	transform-style: preserve-3d;
 	background-size: contain;
     background-position: bottom;
+}
+
+.searchwp-live-search-no-min-chars::after {
+	content: "Продолжайте печатать" !important;
 }
 
 /* <-- searchwp live search results */
@@ -595,6 +605,7 @@ a.lightgreen {
 .brands {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
 	&__item {
 		width: 150px;
     	height: 150px;

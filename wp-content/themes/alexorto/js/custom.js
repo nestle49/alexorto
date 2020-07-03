@@ -140,6 +140,18 @@
 
         /* <-- mobile top menu */
 
+        /* select size at cf7 order --> */
+
+        $('.product__radio').change(function() {
+            var selectedSize = parseInt($(this).attr("data-id"));
+            var selectSizes = $("#select-sizes");
+            if (selectedSize && selectSizes) {
+                $(`#select-sizes option[value=${selectedSize}]`).prop('selected', true);
+            }
+        });
+
+        /* <-- select size at cf7 order */
+
     });
   })( jQuery );
 

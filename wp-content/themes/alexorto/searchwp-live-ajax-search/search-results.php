@@ -70,6 +70,6 @@ endif;
 <?php endif; ?>
 <?php else : ?>
 	<p class="searchwp-live-search-no-results" role="option">
-		<em><?= pll_e('Совпадений не найдено'); ?></em>
+		<em><?='Совпадений не найдено' ?></em>
 	</p>
 <?php endif; ?>

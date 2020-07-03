@@ -191,6 +191,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * search ajax live config
+ */
+require_once dirname(__FILE__) . '/includes/Ajax_search_live/ajax_config.php';
+
+/**
  * Include Carbon Service
  */
 require_once dirname(__FILE__) . '/service/CarbonService.php';

@@ -1,5 +1,3 @@
-
-
 <form role="search" method="get" class="search-form" id="search-form" action="<?= esc_url( home_url( '/' ) ) ?>">
 		<input type="search" class="search-field" placeholder="Поиск" value="<?= get_search_query() ?>" name="s" />
 		<button type="submit" class="search-submit" id="search-submit">
