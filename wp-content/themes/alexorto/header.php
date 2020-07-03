@@ -62,7 +62,7 @@ $data['top_banner']['mobile'] = carbon_get_the_post_meta( 'top_banner_mobile' );
 			<div class="header-bottom">
 
 				<a href="/" class="site-branding__link-to-main">
-					<img src="<?= get_template_directory_uri() . '/images/logo.png' ?>" class="site-header__logo" title="Алекс Орто" width="48px" height="auto">
+					<img src="<?= get_template_directory_uri() . '/images/logo.jpg' ?>" class="site-header__logo" title="Алекс Орто" width="152px" height="48px">
 				</a>
 
 				<nav id="site-navigation" class="main-navigation">
