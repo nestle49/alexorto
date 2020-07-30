@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 5.4.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-07-21 19:05:30+0000\n"
+"PO-Revision-Date: 2020-07-29 21:01:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,34 +10,6 @@ msgstr ""
 "X-Generator: GlotPress/3.0.0-alpha.2\n"
 "Language: ru\n"
 "Project-Id-Version: WordPress - 5.4.x - Administration\n"
-
-#: wp-admin/js/site-health.js:274
-msgid "All site health tests have finished running."
-msgstr "Все тесты проверки здоровья завершены."
-
-#: wp-admin/js/site-health.js:245
-msgid "Please wait..."
-msgstr "Подождите..."
-
-#: wp-admin/js/site-health.js:135
-msgid "All site health tests have finished running. There are items that should be addressed, and the results are now available on the page."
-msgstr "Все тесты проверки здоровья сайта завершены. Есть элементы с замечаниями, результаты доступны на странице."
-
-#: wp-admin/js/site-health.js:134
-msgid "Should be improved"
-msgstr "Требует улучшения"
-
-#: wp-admin/js/site-health.js:130
-msgid "All site health tests have finished running. Your site is looking good, and the results are now available on the page."
-msgstr "Все тесты проверки здоровья завершены. Всё выглядит хорошо, результаты доступны на странице."
-
-#: wp-admin/js/site-health.js:129
-msgid "Good"
-msgstr "Хорошо"
-
-#: wp-admin/js/site-health.js:25
-msgid "Site information has been added to your clipboard."
-msgstr "Информация о сайте скопирована в буфер обмена."
 
 #: wp-admin/maint/repair.php:169
 msgid "Repair and Optimize Database"
@@ -14005,7 +13977,7 @@ msgstr "WordPress развивается силами <a href=\"%1$s\">межд�
 #: wp-admin/privacy.php:44 wp-admin/freedoms.php:44 wp-admin/about.php:39
 #: wp-admin/menu.php:298
 msgid "Privacy"
-msgstr "Конфиденциальность"
+msgstr "Приватность"
 
 #: wp-admin/credits.php:40 wp-admin/privacy.php:37 wp-admin/freedoms.php:18
 #: wp-admin/freedoms.php:43 wp-admin/freedoms.php:49 wp-admin/about.php:38
@@ -14042,19 +14014,3 @@ msgstr "WordPress"
 #: wp-admin/privacy.php:36 wp-admin/freedoms.php:42 wp-admin/about.php:37
 msgid "Credits"
 msgstr "Участники"
-
-#. Author URI of the plugin
-msgid "http://ma.tt/"
-msgstr "http://ma.tt/"
-
-#. Description of the plugin
-msgid "This is not just a plugin, it symbolizes the hope and enthusiasm of an entire generation summed up in two words sung most famously by Louis Armstrong: Hello, Dolly. When activated you will randomly see a lyric from <cite>Hello, Dolly</cite> in the upper right of your admin screen on every page."
-msgstr "Это не просто плагин, он символизирует надежду и энтузиазм целого поколения, выраженные в двух словах из песни, наиболее известной в исполнении Луиса Армстронга: &laquo;Hello, Dolly&raquo;. После активации плагина на каждой странице панели управления в правом верхнем углу будет отображаться случайная строка из этой песни."
-
-#. Plugin URI of the plugin
-msgid "http://wordpress.org/plugins/hello-dolly/"
-msgstr "http://wordpress.org/plugins/hello-dolly/"
-
-#. Plugin Name of the plugin
-msgid "Hello Dolly"
-msgstr "Hello Dolly"
