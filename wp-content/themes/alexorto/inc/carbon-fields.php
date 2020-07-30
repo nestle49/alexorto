@@ -102,6 +102,7 @@ function crb_attach_post_meta() {
     ->set_context( 'carbon_fields_after_title' )
     ->set_priority( 'default' )
     ->where( 'post_template', '=', 'page-tabs.php' )
+    ->or_where( 'post_template', '=', 'page-tabs-right.php' )
     ->add_fields( array(
         Field::make( 'complex', 'tabs', 'Табы на странице' )
             ->set_layout( 'tabbed-vertical' )

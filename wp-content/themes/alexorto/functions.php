@@ -158,6 +158,10 @@ function alexorto_scripts() {
 		wp_enqueue_script( 'product-swipers-js', get_template_directory_uri() . '/js/product-swipers.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/product-swipers.js' ) , true );
 	}
 
+	if ( is_page_template('page-tabs-right.php') ) {
+		wp_enqueue_script( 'page-tabs-right-js', get_template_directory_uri() . '/js/page-tabs-right.js', array( 'jquery' ), filemtime( get_stylesheet_directory() . '/js/page-tabs-right.js' ) , true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -1,16 +1,22 @@
 <!-- Tabs Right List -->
 
 {% if tabs %}
-    <section class="tabs">
-        {% for tab in tabs %} 
-            {# {{ dump(tab) }} #}
-            <input type="radio" class="tabs__input" id="tab-btn-{{ loop.index }}" name="tabs"  {{ loop.first ? 'checked' }}>
-            <label for="tab-btn-{{ loop.index }}" class="tabs__label"> {{ tab.header }} </label>
-        {% endfor %} 
-        {% for tab in tabs %} 
-            <div class="tabs__content" id="content-{{ loop.index }}">
-                {{ tab.content|wpautop|shortcodes }}
+    <section class="tabs-right">
+        <div class="tabs-right__cloud">
+            <div class="tabs-right__cloud-wrapper">
+                {% for tab in tabs %} 
+                    {# {{ dump(tab) }} #}
+                    <input type="radio" class="tabs-right__input" name="tabs" data-tag="tab-{{ loop.index }}" id="tab-btn-{{ loop.index }}" name="tabs"  {{ loop.first ? 'checked' }}>
+                    <label for="tab-btn-{{ loop.index }}" class="tabs-right__label"> {{ tab.header }} </label>
+                {% endfor %} 
             </div>
-        {% endfor %} 
+        </div>
+        <div class="tabs-right__container">
+            {% for tab in tabs %} 
+                <div class="tabs-right__content {{ loop.first ? 'tabs-right__content--active' }}" data-tag="tab-{{ loop.index }}">
+                    {{ tab.content|wpautop|shortcodes }}
+                </div>
+            {% endfor %} 
+        </div>
     </section>
 {% endif %}

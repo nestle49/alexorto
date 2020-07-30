@@ -21,7 +21,8 @@ $data['top_banner']['mobile'] = carbon_get_the_post_meta( 'top_banner_mobile' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<link rel="icon" href="<?= get_template_directory_uri()?>/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/favicon.ico" type="image/x-icon" />
 	<?php wp_head(); ?>
 </head>
 

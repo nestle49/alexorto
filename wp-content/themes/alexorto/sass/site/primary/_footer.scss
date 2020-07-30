@@ -51,12 +51,12 @@
             font-size: 15px;
             font-size: .9375rem;
             line-height: 1;
-            padding: 5px 0;
-            padding: .3125rem 0;
+            padding: 14px 0;
+            padding: .825rem 0;
             @include media('<desktop'){
-                padding: 5px 0;
-                padding: .3125rem 0;
-            } 
+                padding: 14px 0;
+                padding: .825rem 0;
+            }
         }
 
         &:hover {
