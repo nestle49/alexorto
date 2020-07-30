@@ -9,7 +9,7 @@
 		<div class="mobile-menu__wrapper">
 			<?php
 				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
+					'theme_location' => 'menu-6',
 					'menu_id'        => 'primary-menu-mobile',
 				) );
 			?>

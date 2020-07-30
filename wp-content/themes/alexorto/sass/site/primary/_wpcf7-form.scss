@@ -194,6 +194,13 @@ textarea {
     }
 }
 
+.wpcf7-not-valid {
+    box-shadow: 0px 0px 5px 0px #FF3300;
+    border: 1px solid #FF3300 !important;
+    border: .0625rem solid #FF3300 !important;
+    transition: 0.2s ease all;
+}
+
 @keyframes jelly {
     0% {
         transform: scale(1, 1);

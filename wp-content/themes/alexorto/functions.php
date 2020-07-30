@@ -49,6 +49,7 @@ if ( ! function_exists( 'alexorto_setup' ) ) :
 			'menu-3' => esc_html__( 'Page', 'alexorto' ),
 			'menu-4' => esc_html__( 'Front', 'alexorto' ),
 			'menu-5' => esc_html__( 'Catalog', 'alexorto' ),
+			'menu-6' => esc_html__( 'Mobile', 'alexorto' ),
 		) );
 
 		/*

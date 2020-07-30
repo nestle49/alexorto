@@ -21,7 +21,9 @@ get_header();
                 <div class="swiper-container gallery-top">
                     <div class="swiper-wrapper">
                         <?php foreach(CarbonService::getProductGallery() as $slide): ?>
-                            <div class="swiper-slide" style="background-image:url('<?= wp_get_attachment_image_src( $slide, 'full', false )['0']; ?>')"></div>
+                            <div class="swiper-slide">
+                                <img src="<?= wp_get_attachment_image_src( $slide, 'full', false )['0']; ?>" alt="product" title="product" />
+                            </div>
                         <?php endforeach; ?>
                     </div>
                     <!-- Add Arrows -->
