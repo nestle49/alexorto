@@ -71,6 +71,7 @@
                 margin: 0 auto;
             }
             & img {
+                min-width: 152px;
                 @include media('<tablet'){
                     margin-left: -24px; 
                 }
