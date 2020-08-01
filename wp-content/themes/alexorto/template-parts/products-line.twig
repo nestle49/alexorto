@@ -14,7 +14,7 @@
         <div class="home-products__list">
             {% for product in products %} 
                 <div class="home-products__list-item">
-                    <a href="{{ product.guid }}" class="products-list__image" style="background-image: url('{{ product.preview }}');">
+                    <a href="{{ product.guid }}" class="products-list__image" title="product" style="background-image: url('{{ product.preview }}');">
                     {% if product.is_new %}
                         <span class="product-label product-label--new">Новинка</span>
                     {% endif %}
@@ -22,13 +22,13 @@
                     {% if product.code %}
                         <span class="products-list__code"> {{ product.code }} </span>
                     {% endif %}
-                    <a href="{{ product.guid }}" class="products-list__title">
+                    <a href="{{ product.guid }}" class="products-list__title" title="product">
                         {{ product.post_title }}
                     </a>
                     {% if product.price %}
                         <span class="products-list__price"> {{ product.price }} ₽ </span>
                     {% endif %}
-                    <a href="{{ product.guid }}" class="products-list__button">
+                    <a href="{{ product.guid }}" class="products-list__button" title="product">
                         Подробнее
                     </a>
                 </div>

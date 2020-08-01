@@ -11,7 +11,7 @@
                 {% elseif (i == 3) %} {{ "home-services__item--purple" }} 
                 {% endif %} {% set i = i + 1 %} {% if i == 4 %} {% set i = 0 %} {% endif %}">
                     <div class="home-services__image-container">
-                        <img src="{{ service.service_image }}" width="auto" height="auto">
+                        <img src="{{ service.service_image }}" width="auto" height="auto" alt="service" title="service">
                     </div>
                     <div class="home-services__content">
                         <span class="home-services__title"> {{ service.service_header }} </span>
