@@ -28,7 +28,7 @@
                 galleryTop.autoplay.stop();
             },
             function() {
-                galleryTop.start();
+                galleryTop.autoplay.start();
             }
         );
 
