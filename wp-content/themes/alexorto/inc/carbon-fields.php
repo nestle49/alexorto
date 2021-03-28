@@ -6,6 +6,27 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' );
 function crb_attach_theme_options() {
     Container::make( 'theme_options', __( 'Главная страница', 'crb' ) )
+        ->add_tab( 'Header Bar', array(
+            Field::make( 'checkbox', 'header_bar_is_visible', 'Показывать хэдер бар' )->help_text('Хэдер бар будет показываться в мобильной версии главной страницы сайта, если установлен этот чекбокс и заполнены поля ниже.'),
+            Field::make( 'text', 'header_bar_text', 'Текст хэдер бара' )->set_width( 100 )->set_conditional_logic( array(
+                array(
+                    'field' => 'header_bar_is_visible',
+                    'value' => true,
+                )
+            ) ),
+            Field::make( 'color', 'header_bar_text_color', 'Цвет текста хэдербара' )->set_width( 50 )->set_conditional_logic( array(
+                array(
+                    'field' => 'header_bar_is_visible',
+                    'value' => true,
+                )
+            ) ),
+            Field::make( 'color', 'header_bar_bg_color', 'Цвет фона хэдербара' )->set_width( 50 )->set_conditional_logic( array(
+                array(
+                    'field' => 'header_bar_is_visible',
+                    'value' => true,
+                )
+            ) ),
+        ) )
         ->add_tab( 'Шапка', array(
             Field::make( 'text', 'header_phone', 'Номер телефона в шапке' )->set_width( 30 ),
             Field::make( 'text', 'header_email', 'E-mail в шапке' )->set_width( 30 ),
@@ -52,7 +73,17 @@ function crb_attach_theme_options() {
         Field::make( 'checkbox', 'crb_bold', __( 'Жирный' ) )
         ->set_option_value( 'Да' )
     ));
+}
 
+add_action( 'carbon_fields_register_fields', 'crb_attach_scripts' );
+function crb_attach_scripts() {
+    Container::make( 'theme_options', 'Scripts', 'Скрипты' )
+    ->set_icon( 'dashicons-chart-line' )
+	->add_fields( array(
+        Field::make( 'textarea', 'head_tags', 'Скрипты в <head>')->set_rows( 10 ),
+        Field::make( 'textarea', 'body_tags', 'Скрипты сразу после открывающего <body>')->set_rows( 10 ),
+        Field::make( 'textarea', 'footer_tags', 'Скрипты в <footer>')->set_rows( 10 ),
+    ));
 }
 
 add_action( 'carbon_fields_register_fields', 'crb_attach_post_meta' );

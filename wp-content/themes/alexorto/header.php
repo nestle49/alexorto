@@ -101,6 +101,9 @@ $data['top_banner']['mobile'] = carbon_get_the_post_meta( 'top_banner_mobile' );
 			<?php Timber::render('./template-parts/top-banner.twig', $data['top_banner']); ?>
 		<?php endif; ?>
 		<?php Timber::render('./template-parts/horizontally-menu.twig', CarbonService::getTimberMenu("menu-4")); ?>
+		<?php if (is_front_page()) { 
+			Timber::render('./template-parts/header-bar.twig', CarbonService::getHeaderBar());
+		} ?>
 		<?php if (!is_front_page()): ?>
 			<div class="container breadcrumbs-wrapper">
         		<?php

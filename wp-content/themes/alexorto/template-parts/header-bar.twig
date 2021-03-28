@@ -1,0 +1,5 @@
+{% if is_visible and text %}
+    <div class="header-bar" style="color:{{ color ?: "#FFFFFF"}};background:{{ bg_color ?: "#2dc55b" }}">
+        {{ text }}
+    </div>
+{% endif %}

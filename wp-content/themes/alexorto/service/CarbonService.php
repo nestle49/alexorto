@@ -3,6 +3,18 @@
 
 class CarbonService
 {
+    /**
+    * @return mixed
+    *
+    */
+    public static function getHeaderBar()
+    {
+        $data['is_visible'] = carbon_get_theme_option( 'header_bar_is_visible' );
+        $data['color'] = carbon_get_theme_option( 'header_bar_text_color' );
+        $data['bg_color'] = carbon_get_theme_option( 'header_bar_bg_color' );
+        $data['text'] = carbon_get_theme_option( 'header_bar_text' );
+        return $data;
+    }
 
     /**
     * @return array

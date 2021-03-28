@@ -476,3 +476,21 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 /* <-- top banner */
+
+/* header bar --> */
+
+.header-bar {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60px;
+    padding: 0 15px;
+    padding: 0 1.0125rem;
+    @include media('>=tablet'){
+        display: none;
+    } 
+}
+
+/* <-- header bar */

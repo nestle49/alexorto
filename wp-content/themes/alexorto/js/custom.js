@@ -11,6 +11,33 @@
             $("#search-form").hide("slide", { direction: "right" }, 300); 
         });
 
+        // $('.search-field').on('input', function () {
+        //     console.log("TTT");
+        //     console.log(this.value.length);
+        //     if (this.value.length > 0) {
+        //         console.log("trie");
+        //         $('.menu_open--search').addClass('search-no--border');
+        //         $('.searchwp-live-search-results-showing').show();
+        //         const SearchContent = document.querySelector('.searchwp-live-search-results-showing');
+        //         if(SearchContent) {
+                    
+        //             console.log('SearchContent');
+        //             const simpleBar = new SimpleBar(document.querySelector('.searchwp-live-search-results-showing'), {
+        //                 autoHide: false
+        //             })
+        //             console.log(simpleBar.getScrollElement());
+                    
+                 
+        //         }
+                
+         
+        //     } 
+        // });
+
+        // new SimpleBar(document.querySelector('.sub-menu'), {
+        //                 autoHide: false
+        // })
+
         /* <-- searching header */
 
         /* scroll header --> */

@@ -136,10 +136,14 @@ function alexorto_scripts() {
 	wp_enqueue_style( 'jquery-ui-style', get_template_directory_uri() . '/assets/jquery-ui-1.12.1/jquery-ui.min.css', array(), null );
 
 	wp_enqueue_style( 'fancybox-style', get_template_directory_uri() . '/assets/fancybox/jquery.fancybox.min.css', array(), null );
+
+	// wp_enqueue_style( 'simplebar-style', get_template_directory_uri() . '/assets/simplebar/dist/simplebar.min.css', array(), null );
 	
 	wp_enqueue_script( 'fancybox-js', get_template_directory_uri() . '/assets/fancybox/jquery.fancybox.min.js', array( 'jquery' ), null, true );
 
 	wp_enqueue_script( 'jquery-ui-js', get_template_directory_uri() . '/assets/jquery-ui-1.12.1/jquery-ui.min.js', array( 'jquery' ), null, true );
+
+	// wp_enqueue_script( 'simplebar-js', get_template_directory_uri() . '/assets/simplebar/dist/simplebar.min.js', array( 'jquery' ), null, true );
 
 	wp_enqueue_script( 'alexorto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -314,3 +318,24 @@ function custom_admin_styles(){
 	wp_enqueue_style("style-admin", get_template_directory_uri() . "/admin.css", array(), true);
 }
 add_action('admin_head', 'custom_admin_styles');
+
+/**
+ * Скрипты в <head>
+ */
+ add_action('wp_head', function () {
+    echo (string)carbon_get_theme_option('head_tags');
+});
+
+/**
+ * Скрипты сразу после открывающего <body>
+ */
+add_action( 'wp_body_open', function () {
+    echo (string)carbon_get_theme_option('body_tags');
+});
+
+/**
+ * Скрипты в <footer>
+ */
+add_action('wp_footer', function () {
+    echo (string)carbon_get_theme_option('footer_tags');
+}, 30);

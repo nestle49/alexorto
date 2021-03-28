@@ -89,6 +89,10 @@
         border: .0625rem solid #dfdfdf;
         border-radius: 2px;
         border-radius: .125rem;
+        @include media('<desktop'){
+            background-color: transparent;
+            background-size: contain;
+        }
     }
     &__code {
         line-height: 20px;
